@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Información de la empresa MAMCA SA y su portafolio de servicios.">
+    <meta name="OG:title" content="Portafolio MAMCA S.A">
+    <title>MAMCA S.A</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" sizes="64x64" href="IMG/favicon4.png" type="image/png">
+</head>
+<body>
+<!--ENCABEZADO-->
+    <header class="header">
+        <input type="checkbox" class="header__checkbox" id="open-menu">
+        <label for="open-menu" class="header__open-nav-button" role="button">=</label>
+        <div class="header__logo-container">
+            <img class="header-logo" src="IMG/favicon4.png" alt="logo183">
+        </div>
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-element"><a href="#inicio">INICIO</a></li>
+                <li class="header__nav-element"><a href="servicios.html">SERVICIOS</a></li>
+                <li class="header__nav-element"><a href="nosotros.html">¿QUIÉNES SOMOS?</a></li>
+                <li class="header__nav-element"><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+<!--información principal-->
+    <main class="empresa" id="inicio">
+        <div class="empresa__wrapper">
+            <div class="empresa__img-cotainer">
+                <img class="empresa__img" src="/IMG/cuenca hidrografica 2.jpg" alt="cuenca">
+            </div>
+            <div class="empresa__data-container">
+                <div class="empresa__data">
+                    <div class="empresa__description">
+                        <h1>MAMCA S.A CONSULTORÍA AMBIENTAL Y SANITARIA</h1>
+                        <h2>Empresa dedica a la consultoría ambiental y sanitaria ubicada en el norte del Cesar</h2>
+                        <p>
+                        En MAMCA S.A. acompañamos a empresas, instituciones y personas naturales en el cumplimiento de sus compromisos ambientales, a través de soluciones técnicas, prácticas y ajustadas a la normativa vigente. Nos especializamos en la gestión, planificación, diseño y diagnóstico de componentes ambientales y sanitarios, brindando un enfoque integral y efectivo. Además, ofrecemos asesoría completa en la gestión y radicación de trámites ambientales ante autoridades competentes, facilitando los procesos y asegurando resultados eficientes y sostenibles. Somos su aliado estratégico para desarrollar proyectos con respaldo técnico, legalidad y responsabilidad ambiental.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section class="servicio" id="servicio">
+        <h2> Servicios </h2>
+        <div class="servicio__data-container">
+            <div class="servicio__data">
+                <h3 class="servicio__description"> Gestion recurso hídrico</h3>
+                <div class="iconoagua64">
+                    <img class="icono_agua" src="IMG/iconoagua64.png" alt="icono_agua">
+                </div>
+                <ul>
+                    <li>💧Acompañamiento técnico en el trámite de la tasa por el uso del agua (TUA)</li>
+                    <li>💧Estudios hidrológicos e hidráulicos para proyectos de infraestructura y planificación</li>
+                    <li>💧Diseño del programa de uso eficiente y ahorro del agua (PUEAA)</li>
+                </ul>
+            </div>
+            <div class="servicio__data">
+                <h3 class="servicio__description"> Gestion de Residuos</h3>
+                <div class="iconoresiduo64">
+                    <img class="iconoresiduo" src="IMG/iconoresiduo64.png" alt="icono_residuo">
+                </div>
+                <ul>
+                    <li>♻️Diseño del Plan de Gestión Integral de Residuos Sólidos (PGIRS Y PEGIRASA)</li>
+                </ul>
+            </div>
+            <div class="servicio__data">
+                <h3 class="servicio__description"> Ordenaminto y Zonificación Ambiental</h3>
+                <div class="iconoordeamiento64">
+                    <img class="iconoordeamiento" src="IMG/iconoordenamiento64.png" alt="icono_ordenamiento">
+                </div>
+                <ul>
+                    <li>🗺️Zonificación ambiental para cuencas hidrográficas</li>
+                    <li>🗺️Representación y análisis de información espacial con herramientas SIG para proyectos forestales o territoriales</li>
+                </ul>
+            </div>
+            <div class="servicio__data">
+                <h3 class="servicio__description"> Planes y Programas de Manejo Ambiental</h3>
+                <div class="iconoplanes64">
+                    <img class="iconoplanes" src="IMG/iconoplanes64.png" alt="icono_planes">
+                </div>
+                <ul>
+                    <li>📊Diseño de Planes de Manejo Ambiental (PMA)</li>
+                </ul>
+            </div>
+            <div class="servicio__data">
+                <h3 class="servicio__description"> Educación y Sensibilización Ambiental<h3>
+                <div class="iconoeducacion64">
+                    <img class="iconoeducacion" src="IMG/iconoeducacion64.png" alt="icono_educacion">
+                </div>
+                <ul>
+                    <li>🌿Capacitaciones Técnicas Ambientales</li>
+                </ul>
+            </div>
+        </div>
+        <div class="button-ver_mas">
+            <a href="servicios.html">Ver más información acerca de los servicios</a>
+        </div>
+    </section>
+    <section class="form" id="contacto">
+        <h2>Contacto</h2>
+        <form class="form__form" action="https://formsubmit.co/mamca.consultoria@gmail.com" method="POST">
+            <div class="form__input-container">
+                <label for="">Nombre
+                    <input type="text" required placeholder="Nombre">
+                </label>
+            </div>
+            <div class="form__input-container">
+                <label for="">Apellido
+                    <input type="text" required placeholder="Apellido">
+                </label>
+            </div>
+            <div class="form__input-container">
+                <label for="">Correo electrónico
+                    <input type="email" required placeholder="xxxx@example.com">
+                </label>
+            </div>
+            <div class="form__input-container">
+                <label for="">Mensaje
+                    <textarea placeholder="Tu mensaje"></textarea>
+                </label>
+            </div>
+            <div class="form__input-container">
+                <input type="submit" >
+            </div>
+        </form>
+    </section>
+    <div class="button-whats">
+        <a href="https://wa.me/573154061408" target="_blank"> <i class="fab fa-whatsapp"></i> Contáctanos en WhatsApp </a>
+    </div>
+ <footer>
+        <p>MAMCA Consultoría Ambiental | Copyright © 2025</p>
+        <div class="contactanos">
+            <h4>Contáctanos</h4>
+            <p> <i class="fas fa-envelope"></i> <strong>correo electronico:</strong> mamca.consultoria@gmail.com</p>
+            <p> <i class="fas fa-phone"></i> <strong>Teléfonos:</strong> 3154061408 | 3107395266 | 3016764850</p>
+        </div>
+    </footer>
+</body>
+</html>

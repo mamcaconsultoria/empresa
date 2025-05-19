@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAMCA S.A</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" sizes="64x64" href="IMG/favicon4.png" type="image/png">
+</head>
+<body>
+<!--ENCABEZADO-->
+    <header class="header">
+        <input type="checkbox" class="header__checkbox" id="open-menu">
+        <label for="open-menu" class="header__open-nav-button" role="button">=</label>
+        <div class="header__logo-container">
+            <img class="header-logo" src="IMG/favicon4.png" alt="logo183">
+        </div>
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-element"><a href="index.html">INICIO</a></li>
+                <li class="header__nav-element"><a href="servicios.html">SERVICIOS</a></li>
+                <li class="header__nav-element"><a href="nosotros.html">¿QUIÉNES SOMOS?</a></li>
+                <li class="header__nav-element"><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+<!--información principal-->
+    <main class="form" id="contacto">
+        <section class="contacto__container">
+            <h2>¿Quieres escribirnos? ¡Hazlo!</h2>
+            <form class="form__form" action="https://formsubmit.co/mamca.consultoria@gmail.com" method="POST">
+            <div class="form__input-container">
+                <label for="">Nombre
+                    <input type="text" required placeholder="Nombre">
+                </label>
+            </div>
+            <div class="form__input-container">
+                <label for="">Apellido
+                    <input type="text" required placeholder="Apellido">
+                </label>
+            </div>
+            <div class="form__input-container">
+                <label for="">Correo electrónico
+                    <input type="email" required placeholder="xxxx@example.com">
+                </label>
+            </div>
+            <div class="form__input-container">
+                <label for="">Mensaje
+                    <textarea placeholder="Tu mensaje"></textarea>
+                </label>
+            </div>
+            <div class="form__input-container">
+                <input type="submit" >
+            </div>
+            </form>
+        </section>
+
+        <section class="contactos">
+            <div class="contactos__data">
+                <h2>Datos de contacto</h2>
+                <p> <i class="fas fa-envelope"></i> <strong>correo electronico:</strong> mamca.consultoria@gmail.com</p>
+            <p> <i class="fas fa-phone"></i> <strong>Teléfonos:</strong> 3154061408 | 3107395266 | 3016764850</p>
+            </div>
+        </section>
+
+    </main>
+  
+    <div class="button-whats">
+        <a href="https://wa.me/573154061408" target="_blank"> <i class="fab fa-whatsapp"></i> Contáctanos en WhatsApp </a>
+    </div>
+ <footer>
+        <p>MAMCA Consultoría Ambiental | Copyright © 2025</p>
+        <div class="contactanos">
+            <h4>Contáctanos</h4>
+            <p> <i class="fas fa-envelope"></i> <strong>correo electronico:</strong> mamca.consultoria@gmail.com</p>
+            <p> <i class="fas fa-phone"></i> <strong>Teléfonos:</strong> 3154061408 | 3107395266 | 3016764850</p>
+        </div>
+    </footer>
+</body>
+</html>
