@@ -1,0 +1,105 @@
+/* Basic Setup */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Navbar Scrolled State Utility */
+.navbar-scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding-top: 0.5rem !important; /* Reduced padding for slim look */
+    padding-bottom: 0.5rem !important; /* Reduced padding for slim look */
+}
+
+/* Logo Color Transition */
+/* By default (transparent nav), logo is inverted to look white on dark background */
+nav:not(.navbar-scrolled) .nav-logo {
+    filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+/* When scrolled (white nav), show original brand colors */
+nav.navbar-scrolled .nav-logo {
+    filter: none;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50px;
+    z-index: 100;
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Animations */
+@keyframes kenBurns {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+.animate-ken-burns {
+    animation: kenBurns 20s ease-in-out infinite alternate;
+}
+
+/* Reveal on Scroll Animations */
+.reveal-up, .reveal-left, .reveal-right {
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+
+.reveal-up {
+    transform: translateY(40px);
+}
+
+.reveal-left {
+    transform: translateX(-40px);
+}
+
+.reveal-right {
+    transform: translateX(40px);
+}
+
+.reveal-active {
+    opacity: 1;
+    transform: translate(0);
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+    outline: 2px solid #6aa84f;
+    outline-offset: 2px;
+}
