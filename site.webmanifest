@@ -1,0 +1,11 @@
+{
+  "name": "MAMCA S.A.S. – Consultoría ambiental",
+  "short_name": "MAMCA",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#0f392b",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" }
+  ]
+}

@@ -1,219 +1,253 @@
-// Initialize Lucide Icons
-lucide.createIcons();
+/* =====================================================================
+   MAMCA S.A.S. — Comportamiento del sitio
+   ===================================================================== */
 
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- Navbar Logic ---
-    const navbar = document.getElementById('navbar');
-    const navContainer = document.getElementById('nav-container'); // Get container to control height
-    const mainLogo = document.getElementById('main-logo'); // Get logo element
-    const navLinks = document.querySelectorAll('.nav-link');
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenuBtnIcon = mobileMenuBtn.querySelector('i');
+/* ---------- CONFIGURACIÓN: edite solo esta parte ---------- */
+const CONFIG = {
+  // Número de WhatsApp en formato internacional, sin "+" ni espacios
+  whatsapp: '573154061408',
+  correo: 'mamca.consultoria@gmail.com',
 
-    const handleScroll = () => {
-        if (window.scrollY > 20) {
-            // SCROLLED STATE (Compact)
-            navbar.classList.add('navbar-scrolled');
-            navbar.classList.remove('py-6', 'bg-transparent');
-            
-            // Remove the tall min-height so the bar can shrink
-            if(navContainer) {
-                navContainer.classList.remove('min-h-[110px]');
-            }
+  // Redes sociales: pegue el enlace completo y el ícono aparecerá solo en el pie de página.
+  // Ejemplo: facebook: 'https://www.facebook.com/mamcasas'
+  redes: {
+    facebook: '',
+    instagram: '',
+    linkedin: '',
+  },
 
-            // Resize logo significantly smaller (h-28 -> h-14)
-            if(mainLogo) {
-                mainLogo.classList.remove('h-28');
-                mainLogo.classList.add('h-14');
-            }
+  // Google Analytics 4 (opcional). Pegue su ID, p. ej. 'G-XXXXXXXXXX', para medir visitas
+  // y clics en WhatsApp, correo y descarga del PDF. Vacío = desactivado.
+  ga4: '',
+};
+/* ----------------------------------------------------------- */
 
-            navLinks.forEach(link => {
-                link.classList.remove('text-white', 'hover:text-secondary', 'drop-shadow-sm');
-                link.classList.add('text-gray-700', 'hover:text-primary');
-            });
+(() => {
+  'use strict';
 
-            mobileMenuBtn.classList.remove('text-white', 'hover:text-secondary');
-            mobileMenuBtn.classList.add('text-gray-700', 'hover:text-primary', 'bg-gray-100');
-        } else {
-            // TOP STATE (Expanded)
-            navbar.classList.remove('navbar-scrolled');
-            navbar.classList.add('py-6', 'bg-transparent');
+  const $ = (sel, ctx = document) => ctx.querySelector(sel);
+  const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 
-            // Restore tall min-height
-            if(navContainer) {
-                navContainer.classList.add('min-h-[110px]');
-            }
+  /* ---------- Analítica opcional ---------- */
+  function track(evento, datos = {}) {
+    if (typeof window.gtag === 'function') window.gtag('event', evento, datos);
+  }
+  if (CONFIG.ga4) {
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(CONFIG.ga4)}`;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', CONFIG.ga4, { anonymize_ip: true });
+  }
+  document.addEventListener('click', (e) => {
+    const el = e.target.closest('[data-track]');
+    if (el) track(el.dataset.track, { link_url: el.href || '' });
+  });
 
-            // Restore large logo
-            if(mainLogo) {
-                mainLogo.classList.add('h-28');
-                mainLogo.classList.remove('h-14');
-            }
+  /* ---------- Año del pie de página ---------- */
+  const year = $('#year');
+  if (year) year.textContent = new Date().getFullYear();
 
-            navLinks.forEach(link => {
-                link.classList.add('text-white', 'hover:text-secondary', 'drop-shadow-sm');
-                link.classList.remove('text-gray-700', 'hover:text-primary');
-            });
+  /* ---------- Redes sociales (solo las que tengan enlace) ---------- */
+  $$('[data-social]').forEach((li) => {
+    const url = (CONFIG.redes[li.dataset.social] || '').trim();
+    if (url) {
+      li.querySelector('a').href = url;
+      li.hidden = false;
+    }
+  });
 
-            mobileMenuBtn.classList.add('text-white', 'hover:text-secondary');
-            mobileMenuBtn.classList.remove('text-gray-700', 'hover:text-primary', 'bg-gray-100');
-        }
-    };
+  /* ---------- Encabezado y menú móvil ---------- */
+  const header = $('#site-header');
+  const menuBtn = $('#menu-btn');
+  const menu = $('#mobile-menu');
+  const menuIcon = menuBtn ? menuBtn.querySelector('use') : null;
+  let menuOpen = false;
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
+  function updateHeader() {
+    const solid = window.scrollY > 24 || menuOpen;
+    header.dataset.solid = solid ? 'true' : 'false';
+  }
 
-    // --- Mobile Menu Logic ---
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-    let isMenuOpen = false;
+  function setMenu(open, { focusButton = false } = {}) {
+    if (!menu || !menuBtn) return;
+    menuOpen = open;
+    menu.hidden = !open;
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    if (menuIcon) menuIcon.setAttribute('href', `assets/icons.svg#${open ? 'x' : 'menu'}`);
+    updateHeader();
+    if (focusButton) menuBtn.focus();
+  }
 
-    mobileMenuBtn.addEventListener('click', () => {
-        isMenuOpen = !isMenuOpen;
-        if (isMenuOpen) {
-            mobileMenu.classList.remove('scale-y-0', 'opacity-0');
-            mobileMenuBtnIcon.setAttribute('data-lucide', 'x');
-        } else {
-            mobileMenu.classList.add('scale-y-0', 'opacity-0');
-            mobileMenuBtnIcon.setAttribute('data-lucide', 'menu');
-        }
-        lucide.createIcons();
-    });
-
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            isMenuOpen = false;
-            mobileMenu.classList.add('scale-y-0', 'opacity-0');
-            mobileMenuBtnIcon.setAttribute('data-lucide', 'menu');
-            lucide.createIcons();
-        });
-    });
-
-    // Close menu when clicking outside
+  if (menuBtn) {
+    menuBtn.addEventListener('click', () => setMenu(!menuOpen));
+    $$('a', menu).forEach((a) => a.addEventListener('click', () => setMenu(false)));
     document.addEventListener('click', (e) => {
-        if (!navbar.contains(e.target) && isMenuOpen) {
-            isMenuOpen = false;
-            mobileMenu.classList.add('scale-y-0', 'opacity-0');
-            mobileMenuBtnIcon.setAttribute('data-lucide', 'menu');
-            lucide.createIcons();
+      if (menuOpen && !header.contains(e.target)) setMenu(false);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menuOpen) setMenu(false, { focusButton: true });
+    });
+    // Si la pantalla se agranda a escritorio, cerrar el menú móvil
+    window.matchMedia('(min-width: 1024px)').addEventListener('change', (mq) => {
+      if (mq.matches) setMenu(false);
+    });
+  }
+
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
+
+  /* ---------- Enlace activo en el menú según la sección visible ---------- */
+  const navLinks = $$('.nav-link');
+  const sections = navLinks
+    .map((a) => document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
+  if ('IntersectionObserver' in window && sections.length) {
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach((a) => {
+          const activo = a.getAttribute('href') === `#${entry.target.id}`;
+          if (activo) a.setAttribute('aria-current', 'true');
+          else a.removeAttribute('aria-current');
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach((s) => spy.observe(s));
+  }
+
+  /* ---------- Animación al hacer scroll ---------- */
+  const reveals = $$('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
         }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach((el) => io.observe(el));
+  } else {
+    reveals.forEach((el) => el.classList.add('is-visible'));
+  }
+
+  /* ---------- Botón flotante: se oculta en la portada y en contacto,
+     donde ya hay botones de WhatsApp visibles ---------- */
+  const floatBtn = $('#whatsapp-float');
+  const zonasSinFlotante = ['#inicio', '#contacto'].map((s) => $(s)).filter(Boolean);
+  if (floatBtn && zonasSinFlotante.length && 'IntersectionObserver' in window) {
+    const visibles = new Set();
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => (e.isIntersecting ? visibles.add(e.target) : visibles.delete(e.target)));
+      floatBtn.classList.toggle('is-hidden', visibles.size > 0);
+    }, { threshold: 0.15 });
+    zonasSinFlotante.forEach((z) => io.observe(z));
+  }
+
+  /* ---------- Lista de servicios del formulario ----------
+     Se arma sola a partir de los botones "Cotizar" (data-service / data-group),
+     así las tarjetas y el formulario nunca quedan desincronizados. */
+  const select = $('#f-servicio');
+  if (select) {
+    const grupos = new Map();
+    $$('[data-service]').forEach((btn) => {
+      const grupo = btn.dataset.group || 'Servicios';
+      if (!grupos.has(grupo)) grupos.set(grupo, new Set());
+      grupos.get(grupo).add(btn.dataset.service);
     });
-
-    // --- Service Accordion Logic (Smooth Height) ---
-    const toggleButtons = document.querySelectorAll('.toggle-service-btn');
-
-    toggleButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const card = this.closest('.service-card');
-            const details = card.querySelector('.service-details');
-            const btnText = this.querySelector('.btn-text');
-            const arrow = this.querySelector('.icon-arrow');
-            
-            const isExpanded = !details.classList.contains('max-h-0');
-
-            // Close all other details (optional, but good UX)
-            document.querySelectorAll('.service-details').forEach(el => {
-                el.style.maxHeight = null;
-                el.classList.add('max-h-0', 'opacity-0');
-                // Reset buttons
-                const parentBtn = el.closest('.service-card').querySelector('.toggle-service-btn');
-                parentBtn.querySelector('.btn-text').textContent = 'Ver detalles';
-                parentBtn.querySelector('.icon-arrow').classList.remove('rotate-180');
-            });
-
-            if (!isExpanded) {
-                // Open clicked
-                details.classList.remove('max-h-0', 'opacity-0');
-                details.style.maxHeight = details.scrollHeight + "px";
-                btnText.textContent = 'Ver menos';
-                arrow.classList.add('rotate-180');
-            }
-        });
+    grupos.forEach((servicios, grupo) => {
+      const og = document.createElement('optgroup');
+      og.label = grupo;
+      servicios.forEach((s) => og.appendChild(new Option(s, s)));
+      select.appendChild(og);
     });
+    select.appendChild(new Option('Otro / no estoy seguro', 'Otro / no estoy seguro'));
+  }
 
-    // --- Mission & Vision Modal Logic ---
-    const missionBtn = document.getElementById('mission-btn');
-    const missionModal = document.getElementById('mission-modal');
-    const closeModalBtn = document.getElementById('close-modal-btn');
-    const modalBackdrop = document.getElementById('modal-backdrop');
-    const modalContent = document.getElementById('modal-content');
+  /* ---------- Botones "Cotizar": preseleccionan el servicio ---------- */
+  $$('.quote-btn[data-service]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      if (select) select.value = btn.dataset.service;
+      track('cotizar_click', { servicio: btn.dataset.service });
+      const form = $('#contact-form');
+      if (form) {
+        form.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+        setTimeout(() => $('#f-nombre').focus({ preventScroll: true }), 600);
+      }
+    });
+  });
 
-    const openModal = () => {
-        missionModal.classList.remove('pointer-events-none', 'opacity-0');
-        modalContent.classList.remove('scale-95');
-        modalContent.classList.add('scale-100');
-    };
+  /* ---------- Formulario → WhatsApp ---------- */
+  const form = $('#contact-form');
+  if (form) {
+    const errorBox = $('#form-error');
+    const status = $('#form-status');
+    const mailLink = $('#form-mail-link');
 
-    const closeModal = () => {
-        missionModal.classList.add('pointer-events-none', 'opacity-0');
-        modalContent.classList.remove('scale-100');
-        modalContent.classList.add('scale-95');
-    };
+    const valor = (name) => (form.elements[name] ? form.elements[name].value.trim() : '');
 
-    if (missionBtn && missionModal) {
-        missionBtn.addEventListener('click', openModal);
-        
-        // Close on button click
-        closeModalBtn.addEventListener('click', closeModal);
-        
-        // Close on backdrop click
-        modalBackdrop.addEventListener('click', closeModal);
-
-        // Close on Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !missionModal.classList.contains('opacity-0')) {
-                closeModal();
-            }
-        });
+    function armarMensaje() {
+      const lineas = ['Hola MAMCA S.A.S., les escribo desde la página web.', ''];
+      lineas.push(`*Nombre:* ${valor('nombre')}`);
+      if (valor('empresa')) lineas.push(`*Empresa o entidad:* ${valor('empresa')}`);
+      if (valor('municipio')) lineas.push(`*Municipio del proyecto:* ${valor('municipio')}`);
+      lineas.push(`*Servicio de interés:* ${valor('servicio')}`);
+      lineas.push('', `*Mensaje:* ${valor('mensaje')}`);
+      return lineas.join('\n');
     }
 
-    // --- Scroll Animations (Intersection Observer) ---
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('reveal-active');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach(el => {
-        observer.observe(el);
-    });
-
-    // --- Form Handling ---
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Simulate sending
-            const btn = contactForm.querySelector('button[type="submit"]');
-            const originalContent = btn.innerHTML;
-            
-            btn.innerHTML = '<span>Enviando...</span><div class="animate-spin h-5 w-5 border-2 border-white rounded-full border-t-transparent"></div>';
-            btn.disabled = true;
-
-            setTimeout(() => {
-                btn.innerHTML = '<span>¡Mensaje Enviado!</span><i data-lucide="check" class="w-5 h-5"></i>';
-                btn.classList.remove('bg-primary', 'hover:bg-primary/90');
-                btn.classList.add('bg-green-600');
-                lucide.createIcons();
-                contactForm.reset();
-                
-                setTimeout(() => {
-                    btn.innerHTML = originalContent;
-                    btn.disabled = false;
-                    btn.classList.add('bg-primary', 'hover:bg-primary/90');
-                    btn.classList.remove('bg-green-600');
-                    lucide.createIcons();
-                }, 3000);
-            }, 1500);
-        });
+    function actualizarCorreo() {
+      if (!mailLink) return;
+      const asunto = `Solicitud de información${valor('servicio') ? ' – ' + valor('servicio') : ''}`;
+      const cuerpo = armarMensaje().replace(/\*/g, '');
+      mailLink.href = `mailto:${CONFIG.correo}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
     }
-});
+    form.addEventListener('input', actualizarCorreo);
+    form.addEventListener('change', actualizarCorreo);
+
+    function validar() {
+      const faltan = [];
+      const revisar = [
+        ['nombre', 'su nombre'],
+        ['servicio', 'el servicio de interés'],
+        ['mensaje', 'el mensaje'],
+      ];
+      revisar.forEach(([name, texto]) => {
+        const campo = form.elements[name];
+        const vacio = !campo.value.trim();
+        campo.setAttribute('aria-invalid', vacio ? 'true' : 'false');
+        if (vacio) faltan.push(texto);
+      });
+      const autoriza = form.elements.autoriza;
+      if (!autoriza.checked) faltan.push('la autorización de tratamiento de datos');
+      return faltan;
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const faltan = validar();
+      if (faltan.length) {
+        errorBox.textContent = `Por favor complete: ${faltan.join(', ')}.`;
+        errorBox.classList.remove('hidden');
+        const primero = form.querySelector('[aria-invalid="true"]') || form.elements.autoriza;
+        primero.focus();
+        return;
+      }
+      errorBox.classList.add('hidden');
+
+      const url = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(armarMensaje())}`;
+      track('formulario_whatsapp', { servicio: valor('servicio') });
+      // Se abre en otra pestaña (o en la app de WhatsApp en el celular).
+      // Si el navegador bloquea la ventana, se abre en la misma pestaña.
+      const ventana = window.open(url, '_blank');
+      if (ventana) ventana.opener = null;
+      else window.location.href = url;
+      status.textContent = 'Listo: se abrió WhatsApp con su mensaje. Solo presione Enviar.';
+    });
+  }
+})();

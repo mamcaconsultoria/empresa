@@ -1,0 +1,13 @@
+{
+  "name": "mamca-portafolio-web",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Sitio web de MAMCA S.A.S. – Consultoría ambiental y sanitaria",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./style.css --minify",
+    "watch": "tailwindcss -i ./src/input.css -o ./style.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}

@@ -1,636 +1,871 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es-CO">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAMCA S.A.S</title>
-    <meta name="description" content="Información de la empresa MAMCA S.A.S y su portafolio de servicios.">
-    <meta name="OG:title" content="Portafolio MAMCA S.A.S">
-    <meta name="OG:image" content="assets/logo5.png">
-    <link rel="icon" type="image/svg+xml" href="https://lucide.dev/icons/leaf.svg" />
-    <link rel="icon" sizes="64x64" href="assets/favicon4.png" type="image/png">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS (CDN) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: '#0f392b',
-              secondary: '#6aa84f',
-              accent: '#2b6cb0',
-              neutral: '#f3f4f6',
-              whatsapp: '#25D366',
-            },
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-            },
-            animation: {
-              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-              'bounce-slow': 'bounce 3s infinite',
-              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            },
-            keyframes: {
-              fadeInUp: {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              }
-            }
-          }
-        }
-      }
-    </script>
+    <script>document.documentElement.classList.add('js');</script>
 
-    <!-- Custom CSS -->
+    <!-- SEO básico -->
+    <title>MAMCA S.A.S. | Consultoría ambiental y trámites en Bosconia, Cesar</title>
+    <meta name="description" content="Consultoría ambiental en Bosconia, Cesar: trámites ante la autoridad ambiental, estudios hidrológicos e hidráulicos, servicios forestales, PGIRS, PMA y SIG. Cotice por WhatsApp.">
+    <link rel="canonical" href="https://mamcaconsultoria.github.io/empresa/">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0f392b">
+
+    <!-- Vista previa al compartir (WhatsApp, Facebook, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:site_name" content="MAMCA S.A.S.">
+    <meta property="og:title" content="MAMCA S.A.S. | Consultoría ambiental y sanitaria">
+    <meta property="og:description" content="Trámites ambientales, estudios hidrológicos e hidráulicos, servicios forestales y planes de gestión ambiental en el Cesar.">
+    <meta property="og:url" content="https://mamcaconsultoria.github.io/empresa/">
+    <meta property="og:image" content="https://mamcaconsultoria.github.io/empresa/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Logo de MAMCA S.A.S., consultoría ambiental y sanitaria">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Íconos -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Estilos (Tailwind compilado + estilos propios). Ver README para recompilar. -->
+    <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="style.css">
 
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-<script type="importmap">
-{
-  "imports": {
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react/": "https://esm.sh/react@^19.2.3/"
-  }
-}
-</script>
+    <!-- Datos estructurados para Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "@id": "https://mamcaconsultoria.github.io/empresa/#empresa",
+      "name": "MAMCA S.A.S.",
+      "legalName": "MAMCA S.A.S.",
+      "taxID": "901986614-1",
+      "description": "Consultoría ambiental y sanitaria: trámites ambientales, estudios y diseños hidrológicos e hidráulicos, servicios forestales, planes de gestión de residuos, planes de manejo ambiental, SIG y educación ambiental.",
+      "url": "https://mamcaconsultoria.github.io/empresa/",
+      "logo": "https://mamcaconsultoria.github.io/empresa/assets/logo-emblema.png",
+      "image": "https://mamcaconsultoria.github.io/empresa/assets/og-image.jpg",
+      "email": "mamca.consultoria@gmail.com",
+      "telephone": "+57 315 406 1408",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bosconia",
+        "addressRegion": "Cesar",
+        "addressCountry": "CO"
+      },
+      "areaServed": { "@type": "AdministrativeArea", "name": "Cesar, Colombia" },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de consultoría ambiental",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estudios y diseños hidrológicos e hidráulicos" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Trámites ambientales: concesión de aguas, permiso de vertimientos, ocupación de cauce, aprovechamiento forestal, RESPEL y licencia ambiental" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Servicios forestales: inventarios forestales, caracterización de epífitas y aprovechamiento forestal" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Recurso hídrico: PUEAA y tasa por utilización de agua (TUA)" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ordenamiento territorial y Sistemas de Información Geográfica (SIG)" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Planes de gestión de residuos: PGIRS y PEGIRASA" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Planes de Manejo Ambiental (PMA)" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Educación ambiental y capacitaciones" } }
+        ]
+      }
+    }
+    </script>
 </head>
-<body class="font-sans text-gray-800 antialiased overflow-x-hidden">
+<body class="font-sans text-gray-800 antialiased bg-white">
 
-    <!-- Navbar -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 ease-in-out py-6 bg-transparent">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Increased container height to accommodate larger square logo -->
-            <div id="nav-container" class="flex justify-between items-center min-h-[110px] transition-all duration-300">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center cursor-pointer group" onclick="window.scrollTo(0,0)">
-                    <!-- Logo Image File: Increased to h-28 (approx 112px) for square visibility -->
-                    <img id="main-logo" src="assets/Logo4.png" alt="MAMCA S.A.S Logo" class="h-28 w-auto transition-all duration-300 nav-logo drop-shadow-lg">
-                </div>
+    <a href="#contenido" class="skip-link">Saltar al contenido</a>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link text-white font-semibold uppercase tracking-wider text-sm transition-all duration-300 hover:text-secondary hover:-translate-y-0.5 drop-shadow-sm">Inicio</a>
-                    <a href="#about" class="nav-link text-white font-semibold uppercase tracking-wider text-sm transition-all duration-300 hover:text-secondary hover:-translate-y-0.5 drop-shadow-sm">Nosotros</a>
-                    <a href="#services" class="nav-link text-white font-semibold uppercase tracking-wider text-sm transition-all duration-300 hover:text-secondary hover:-translate-y-0.5 drop-shadow-sm">Servicios</a>
-                    <a href="#contact" class="nav-link text-white font-semibold uppercase tracking-wider text-sm transition-all duration-300 hover:text-secondary hover:-translate-y-0.5 drop-shadow-sm">Contacto</a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-white hover:text-secondary focus:outline-none transition-colors duration-300 p-2 rounded-md">
-                        <i data-lucide="menu" class="h-8 w-8"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Menu Panel -->
-        <div id="mobile-menu" class="fixed inset-x-0 top-[120px] p-4 transition-all duration-300 transform origin-top scale-y-0 opacity-0 md:hidden z-40">
-            <div class="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black ring-opacity-5">
-                <div class="px-5 pt-4 pb-6 space-y-2">
-                    <a href="#home" class="mobile-link block px-3 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-white hover:bg-secondary transition-colors">Inicio</a>
-                    <a href="#about" class="mobile-link block px-3 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-white hover:bg-secondary transition-colors">Nosotros</a>
-                    <a href="#services" class="mobile-link block px-3 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-white hover:bg-secondary transition-colors">Servicios</a>
-                    <a href="#contact" class="mobile-link block px-3 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-white hover:bg-secondary transition-colors">Contacto</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="relative h-screen w-full overflow-hidden">
-        <div class="absolute inset-0">
-            <!-- Local Hero Image File -->
-            <img src="assets/hero-bg.svg" alt="Paisaje Natural MAMCA" class="w-full h-full object-cover scale-105 animate-ken-burns">
-            <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70"></div>
-        </div>
-        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto mt-[-40px]">
-            <span class="inline-block py-1 px-3 rounded-full bg-secondary/20 border border-secondary/50 text-secondary text-sm font-semibold mb-6 backdrop-blur-sm animate-fade-in-up">
-                Consultoría Ambiental y Sanitaria
-            </span>
-            <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-6 animate-fade-in-up" style="animation-delay: 0.1s; line-height: 1.1;">
-                MAMCA<br/><span class="text-secondary bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-secondary">S.A.S</span>
-            </h1>
-            <p class="text-lg sm:text-2xl text-gray-200 mb-10 max-w-3xl font-light animate-fade-in-up leading-relaxed" style="animation-delay: 0.3s;">
-                Acompañamos tus proyectos con respaldo técnico, responsabilidad ambiental en el sector empresarial, organismos públicos y personas naturales.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-5 animate-fade-in-up w-full sm:w-auto" style="animation-delay: 0.5s;">
-                <a href="#services" class="group px-8 py-4 bg-secondary hover:bg-green-600 text-white font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-green-500/30 flex items-center justify-center gap-2">
-                    Nuestros Servicios
-                    <i data-lucide="arrow-right" class="w-5 h-5 transition-transform group-hover:translate-x-1"></i>
+    <!-- ============ ENCABEZADO ============ -->
+    <header id="site-header" class="site-header fixed inset-x-0 top-0 z-50" data-solid="false">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="header-bar flex items-center justify-between gap-4">
+                <a href="#inicio" class="brand flex items-center gap-3" aria-label="MAMCA S.A.S., ir al inicio">
+                    <span class="brand-chip flex items-center justify-center rounded-full bg-white shadow-md">
+                        <img src="assets/logo-emblema.png" width="160" height="160" alt="" class="brand-logo">
+                    </span>
+                    <span class="leading-tight">
+                        <span class="brand-name block font-extrabold tracking-wide">MAMCA S.A.S.</span>
+                        <span class="brand-tag block text-xs font-medium">Consultoría ambiental</span>
+                    </span>
                 </a>
-                <a href="#contact" class="px-8 py-4 bg-white/10 border border-white/30 backdrop-blur-sm text-white font-bold rounded-full hover:bg-white hover:text-primary transition-all duration-300 shadow-lg flex items-center justify-center">
-                    Contáctanos
+
+                <nav aria-label="Principal" class="hidden lg:block">
+                    <ul class="flex items-center gap-7">
+                        <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                        <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                        <li><a href="#como-trabajamos" class="nav-link">Cómo trabajamos</a></li>
+                        <li><a href="#preguntas-frecuentes" class="nav-link">Preguntas</a></li>
+                        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                    </ul>
+                </nav>
+
+                <a href="#contacto" class="hidden lg:inline-flex items-center gap-2 rounded-full bg-leaf px-5 py-2.5 text-sm font-bold text-white shadow-md transition hover:bg-primary">
+                    Solicitar cotización
                 </a>
+
+                <button id="menu-btn" type="button" class="menu-btn lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-xl" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+                    <svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#menu"></use></svg>
+                </button>
             </div>
         </div>
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
-            <a href="#about" class="text-white/70 hover:text-white transition-colors p-2 block">
-                <i data-lucide="chevron-down" class="h-10 w-10"></i>
-            </a>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 bg-white relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-1/3 h-full bg-gray-50 skew-x-12 translate-x-32 z-0 hidden lg:block"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="lg:grid lg:grid-cols-2 lg:gap-20 items-center">
-                <div class="relative mb-16 lg:mb-0 reveal-left">
-                    <div class="absolute -top-10 -left-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
-                    <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
-                    <div class="relative rounded-3xl overflow-hidden shadow-2xl transform transition-transform hover:scale-[1.02] duration-500 aspect-square">
-                        <!-- Local About Image File -->
-                        <img src="assets/cuenca_hidrografica.jpg" alt="Equipo de Consultoría Ambiental" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-8">
-                            <div class="flex items-center gap-4 text-white">
-                                <div class="bg-secondary p-3 rounded-xl">
-                                    <i data-lucide="award" class="w-8 h-8"></i>
+        <!-- Menú móvil -->
+        <div id="mobile-menu" class="mobile-menu lg:hidden absolute inset-x-0 top-full px-4 pb-4" hidden>
+            <nav aria-label="Menú móvil" class="rounded-2xl bg-white p-3 shadow-2xl ring-1 ring-black/5">
+                <ul class="space-y-1">
+                    <li><a href="#nosotros" class="mobile-link">Nosotros</a></li>
+                    <li><a href="#servicios" class="mobile-link">Servicios</a></li>
+                    <li><a href="#como-trabajamos" class="mobile-link">Cómo trabajamos</a></li>
+                    <li><a href="#preguntas-frecuentes" class="mobile-link">Preguntas frecuentes</a></li>
+                    <li><a href="#contacto" class="mobile-link">Contacto</a></li>
+                </ul>
+                <a href="https://wa.me/573154061408?text=Hola%20MAMCA%20S.A.S.%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." target="_blank" rel="noopener" data-track="whatsapp_menu" class="mt-3 flex items-center justify-center gap-2 rounded-xl bg-whatsapp px-4 py-3.5 font-bold text-ink">
+                    <svg class="i h-5 w-5" aria-hidden="true"><use href="assets/icons.svg#whatsapp"></use></svg>
+                    Escribir por WhatsApp
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contenido">
+
+        <!-- ============ PORTADA ============ -->
+        <section id="inicio" class="hero relative isolate overflow-hidden bg-primary text-white">
+            <img src="assets/hero-bg.svg" alt="" aria-hidden="true" class="hero-bg absolute inset-0 -z-20 h-full w-full object-cover">
+            <div class="absolute inset-0 -z-10 bg-gradient-to-br from-black/60 via-black/30 to-primary/40"></div>
+
+            <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-36 lg:min-h-[100svh] lg:grid-cols-12 lg:px-8 lg:pt-32">
+                <div class="lg:col-span-7">
+                    <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-mint/40 bg-white/5 px-3 py-1 text-sm font-semibold text-mint backdrop-blur-sm">
+                        <svg class="i h-4 w-4" aria-hidden="true"><use href="assets/icons.svg#map-pin"></use></svg>
+                        Bosconia, Cesar · Colombia
+                    </p>
+                    <h1 class="text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
+                        Consultoría ambiental y sanitaria <span class="text-mint">en el Cesar</span>
+                    </h1>
+                    <p class="mt-6 max-w-2xl text-lg leading-relaxed text-gray-200 sm:text-xl">
+                        Gestionamos sus trámites ambientales y elaboramos estudios hidrológicos e hidráulicos, servicios forestales y planes de gestión ambiental para empresas, entidades públicas y personas naturales, con soporte técnico de principio a fin.
+                    </p>
+                    <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+                        <a href="https://wa.me/573154061408?text=Hola%20MAMCA%20S.A.S.%2C%20quiero%20solicitar%20una%20cotizaci%C3%B3n." target="_blank" rel="noopener" data-track="whatsapp_hero" class="inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-7 py-4 font-bold text-ink shadow-lg transition hover:bg-white">
+                            <svg class="i h-5 w-5" aria-hidden="true"><use href="assets/icons.svg#whatsapp"></use></svg>
+                            Cotizar por WhatsApp
+                        </a>
+                        <a href="#servicios" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-white/10 px-7 py-4 font-bold text-white backdrop-blur-sm transition hover:bg-white hover:text-primary">
+                            Ver servicios
+                            <svg class="i h-5 w-5" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg>
+                        </a>
+                    </div>
+                    <ul class="mt-10 grid gap-3 text-sm text-gray-200 sm:grid-cols-3">
+                        <li class="flex items-start gap-2"><svg class="i mt-0.5 h-5 w-5 text-mint" aria-hidden="true"><use href="assets/icons.svg#circle-check"></use></svg>Empresas, entidades públicas y personas naturales</li>
+                        <li class="flex items-start gap-2"><svg class="i mt-0.5 h-5 w-5 text-mint" aria-hidden="true"><use href="assets/icons.svg#circle-check"></use></svg>Acompañamiento hasta la decisión de la autoridad</li>
+                        <li class="flex items-start gap-2"><svg class="i mt-0.5 h-5 w-5 text-mint" aria-hidden="true"><use href="assets/icons.svg#circle-check"></use></svg>Información georreferenciada (SIG)</li>
+                    </ul>
+                </div>
+
+                <aside class="lg:col-span-5" aria-label="Servicios destacados">
+                    <div class="rounded-3xl border border-white/15 bg-white/10 p-5 shadow-2xl backdrop-blur-md sm:p-7">
+                        <p class="mb-4 text-sm font-bold uppercase tracking-wider text-mint">Servicios destacados</p>
+                        <ul class="space-y-3">
+                            <li>
+                                <a href="#hidrologia" class="group flex items-center gap-4 rounded-2xl bg-white/5 p-4 transition hover:bg-white/15">
+                                    <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-mint/20 text-mint"><svg class="i h-6 w-6" aria-hidden="true"><use href="assets/icons.svg#waves"></use></svg></span>
+                                    <span class="flex-1"><span class="block font-bold">Estudios hidrológicos e hidráulicos</span><span class="block text-sm text-gray-300">Caudales, modelación y diseño de obras</span></span>
+                                    <svg class="i h-5 w-5 text-white/60 transition group-hover:translate-x-1" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#tramites" class="group flex items-center gap-4 rounded-2xl bg-white/5 p-4 transition hover:bg-white/15">
+                                    <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-mint/20 text-mint"><svg class="i h-6 w-6" aria-hidden="true"><use href="assets/icons.svg#file-check"></use></svg></span>
+                                    <span class="flex-1"><span class="block font-bold">Trámites ambientales</span><span class="block text-sm text-gray-300">Concesiones, vertimientos, licencias y más</span></span>
+                                    <svg class="i h-5 w-5 text-white/60 transition group-hover:translate-x-1" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#forestal" class="group flex items-center gap-4 rounded-2xl bg-white/5 p-4 transition hover:bg-white/15">
+                                    <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-mint/20 text-mint"><svg class="i h-6 w-6" aria-hidden="true"><use href="assets/icons.svg#trees"></use></svg></span>
+                                    <span class="flex-1"><span class="block font-bold">Servicios forestales</span><span class="block text-sm text-gray-300">Inventarios, epífitas y aprovechamiento</span></span>
+                                    <svg class="i h-5 w-5 text-white/60 transition group-hover:translate-x-1" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- ============ NOSOTROS ============ -->
+        <section id="nosotros" class="relative overflow-hidden bg-white py-20 sm:py-24">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="items-center gap-16 lg:grid lg:grid-cols-2">
+                    <div class="reveal relative mb-14 lg:mb-0">
+                        <div class="absolute -left-10 -top-10 h-64 w-64 rounded-full bg-secondary/10 blur-3xl" aria-hidden="true"></div>
+                        <div class="relative overflow-hidden rounded-3xl shadow-2xl">
+                            <picture>
+                                <source type="image/webp" srcset="assets/cuenca_hidrografica-600.webp 600w, assets/cuenca_hidrografica-1200.webp 1200w" sizes="(min-width: 1024px) 560px, 100vw">
+                                <img src="assets/cuenca_hidrografica-1200.jpg" width="1200" height="1500" loading="lazy" decoding="async" alt="Río que serpentea entre vegetación de humedal al atardecer" class="aspect-[4/3] w-full object-cover lg:aspect-[4/5]">
+                            </picture>
+                            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent p-6 sm:p-8">
+                                <div class="flex items-center gap-4 text-white">
+                                    <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-leaf"><svg class="i h-6 w-6" aria-hidden="true"><use href="assets/icons.svg#leaf"></use></svg></span>
+                                    <span>
+                                        <span class="block text-lg font-bold">Soluciones técnicas ajustadas a la norma</span>
+                                        <span class="block text-sm text-gray-200">Desde Bosconia, Cesar</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal">
+                        <p class="pill">Sobre nosotros</p>
+                        <h2 class="section-title">Aliados técnicos para cumplir la norma ambiental</h2>
+                        <p class="mt-6 text-lg leading-relaxed text-gray-600">
+                            <strong class="text-primary">MAMCA S.A.S.</strong> es una empresa de consultoría ambiental y sanitaria con sede en Bosconia, Cesar. Acompañamos a empresas, entidades públicas y personas naturales con soluciones técnicas, prácticas y ajustadas a la normativa vigente: desde estudios hidrológicos e hidráulicos y servicios forestales hasta la elaboración de planes ambientales y la gestión completa de trámites ante la autoridad ambiental competente.
+                        </p>
+
+                        <ul class="mt-8 grid gap-6 sm:grid-cols-2">
+                            <li class="flex items-start gap-4">
+                                <span class="icon-box"><svg class="i h-6 w-6" aria-hidden="true"><use href="assets/icons.svg#scale"></use></svg></span>
+                                <span><span class="block font-bold text-gray-900">Enfoque normativo</span><span class="block text-sm text-gray-600">Cada documento se elabora según la normativa ambiental vigente.</span></span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="icon-box"><svg class="i h-6 w-6" aria-hidden="true"><use href="assets/icons.svg#file-check"></use></svg></span>
+                                <span><span class="block font-bold text-gray-900">Trámites de principio a fin</span><span class="block text-sm text-gray-600">Preparamos, radicamos y hacemos seguimiento.</span></span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="icon-box"><svg class="i h-6 w-6" aria-hidden="true"><use href="assets/icons.svg#map-pinned"></use></svg></span>
+                                <span><span class="block font-bold text-gray-900">Trabajo de campo</span><span class="block text-sm text-gray-600">Levantamos la información directamente en el sitio.</span></span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="icon-box"><svg class="i h-6 w-6" aria-hidden="true"><use href="assets/icons.svg#layers"></use></svg></span>
+                                <span><span class="block font-bold text-gray-900">Información georreferenciada</span><span class="block text-sm text-gray-600">Entregables con soporte SIG y cartografía.</span></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Misión y visión -->
+                <div class="mt-20 grid gap-6 md:grid-cols-2">
+                    <article class="reveal rounded-3xl border border-green-100 bg-green-50 p-7 sm:p-8">
+                        <span class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-white text-leaf shadow-sm"><svg class="i h-6 w-6" aria-hidden="true"><use href="assets/icons.svg#target"></use></svg></span>
+                        <h3 class="text-xl font-bold text-gray-900">Misión</h3>
+                        <p class="mt-3 leading-relaxed text-gray-700">Ofrecer soluciones ambientales y sanitarias eficientes que respalden el cumplimiento normativo y promuevan la sostenibilidad, mediante consultoría técnica especializada y un compromiso constante con la calidad y los resultados.</p>
+                    </article>
+                    <article class="reveal rounded-3xl border border-sky-100 bg-sky-50 p-7 sm:p-8">
+                        <span class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-white text-accent shadow-sm"><svg class="i h-6 w-6" aria-hidden="true"><use href="assets/icons.svg#eye"></use></svg></span>
+                        <h3 class="text-xl font-bold text-gray-900">Visión</h3>
+                        <p class="mt-3 leading-relaxed text-gray-700">Consolidarnos como una empresa líder en consultoría ambiental a nivel nacional, reconocida por su excelencia técnica, su compromiso con la sostenibilidad y su capacidad para ofrecer soluciones efectivas, innovadoras y adaptadas a las necesidades de cada cliente.</p>
+                    </article>
+                </div>
+
+                <!-- A quién acompañamos -->
+                <div class="reveal mt-16">
+                    <h3 class="text-center text-2xl font-bold text-gray-900">¿A quién acompañamos?</h3>
+                    <ul class="mt-8 grid gap-5 sm:grid-cols-3">
+                        <li class="rounded-2xl border border-gray-100 bg-white p-6 text-center shadow-sm">
+                            <span class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-neutral text-primary"><svg class="i h-6 w-6" aria-hidden="true"><use href="assets/icons.svg#building-2"></use></svg></span>
+                            <span class="block font-bold text-gray-900">Empresas</span>
+                            <span class="mt-1 block text-sm text-gray-600">Permisos, planes y estudios para operar dentro de la norma.</span>
+                        </li>
+                        <li class="rounded-2xl border border-gray-100 bg-white p-6 text-center shadow-sm">
+                            <span class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-neutral text-primary"><svg class="i h-6 w-6" aria-hidden="true"><use href="assets/icons.svg#landmark"></use></svg></span>
+                            <span class="block font-bold text-gray-900">Entidades públicas</span>
+                            <span class="mt-1 block text-sm text-gray-600">Estudios, planes como el PGIRS y propuestas técnicas para procesos de contratación.</span>
+                        </li>
+                        <li class="rounded-2xl border border-gray-100 bg-white p-6 text-center shadow-sm">
+                            <span class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-neutral text-primary"><svg class="i h-6 w-6" aria-hidden="true"><use href="assets/icons.svg#house"></use></svg></span>
+                            <span class="block font-bold text-gray-900">Personas naturales</span>
+                            <span class="mt-1 block text-sm text-gray-600">Trámites para predios, fincas y proyectos particulares.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SERVICIOS: RESUMEN ============ -->
+        <section id="servicios" class="bg-neutral py-20 sm:py-24">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="reveal mx-auto max-w-3xl text-center">
+                    <p class="pill pill-white">Nuestros servicios</p>
+                    <h2 class="section-title">Soluciones ambientales para cada etapa de su proyecto</h2>
+                    <p class="mt-5 text-lg text-gray-600">Elija un servicio para ver qué incluye. Si no sabe cuál necesita, escríbanos y le orientamos sin compromiso.</p>
+                </div>
+
+                <ul class="mt-12 grid grid-cols-2 gap-3 sm:mt-14 sm:gap-5 lg:grid-cols-4">
+                    <li class="reveal"><a href="#hidrologia" class="service-tile service-tile-featured">
+                        <span class="tile-icon"><svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#waves"></use></svg></span>
+                        <span class="tile-title">Estudios y diseños hidrológicos e hidráulicos</span>
+                        <span class="tile-text">Caudales, modelación de cauces y diseño de obras.</span>
+                        <span class="tile-more">Ver más <svg class="i h-4 w-4" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg></span>
+                    </a></li>
+                    <li class="reveal"><a href="#tramites" class="service-tile service-tile-featured">
+                        <span class="tile-icon"><svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#file-check"></use></svg></span>
+                        <span class="tile-title">Trámites ambientales</span>
+                        <span class="tile-text">Concesiones, vertimientos, ocupación de cauce, licencias y más.</span>
+                        <span class="tile-more">Ver más <svg class="i h-4 w-4" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg></span>
+                    </a></li>
+                    <li class="reveal"><a href="#forestal" class="service-tile service-tile-featured">
+                        <span class="tile-icon"><svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#trees"></use></svg></span>
+                        <span class="tile-title">Servicios forestales</span>
+                        <span class="tile-text">Inventarios, caracterización de epífitas y aprovechamiento.</span>
+                        <span class="tile-more">Ver más <svg class="i h-4 w-4" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg></span>
+                    </a></li>
+                    <li class="reveal"><a href="#recurso-hidrico" class="service-tile">
+                        <span class="tile-icon"><svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#droplets"></use></svg></span>
+                        <span class="tile-title">Recurso hídrico</span>
+                        <span class="tile-text">PUEAA y tasa por utilización de agua (TUA).</span>
+                        <span class="tile-more">Ver más <svg class="i h-4 w-4" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg></span>
+                    </a></li>
+                    <li class="reveal"><a href="#sig" class="service-tile">
+                        <span class="tile-icon"><svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#map"></use></svg></span>
+                        <span class="tile-title">Ordenamiento territorial y SIG</span>
+                        <span class="tile-text">Cartografía, análisis espacial y zonificación.</span>
+                        <span class="tile-more">Ver más <svg class="i h-4 w-4" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg></span>
+                    </a></li>
+                    <li class="reveal"><a href="#residuos" class="service-tile">
+                        <span class="tile-icon"><svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#recycle"></use></svg></span>
+                        <span class="tile-title">Planes de gestión de residuos</span>
+                        <span class="tile-text">PGIRS y PEGIRASA.</span>
+                        <span class="tile-more">Ver más <svg class="i h-4 w-4" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg></span>
+                    </a></li>
+                    <li class="reveal"><a href="#pma" class="service-tile">
+                        <span class="tile-icon"><svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#clipboard-list"></use></svg></span>
+                        <span class="tile-title">Planes de manejo ambiental</span>
+                        <span class="tile-text">Impactos, medidas de manejo y seguimiento.</span>
+                        <span class="tile-more">Ver más <svg class="i h-4 w-4" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg></span>
+                    </a></li>
+                    <li class="reveal"><a href="#educacion" class="service-tile">
+                        <span class="tile-icon"><svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#graduation-cap"></use></svg></span>
+                        <span class="tile-title">Educación ambiental</span>
+                        <span class="tile-text">Capacitaciones presenciales o virtuales.</span>
+                        <span class="tile-more">Ver más <svg class="i h-4 w-4" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg></span>
+                    </a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============ HIDROLOGÍA E HIDRÁULICA (sección aparte) ============ -->
+        <section id="hidrologia" class="relative overflow-hidden bg-primary py-20 text-white sm:py-24">
+            <div class="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-secondary/20 blur-3xl" aria-hidden="true"></div>
+            <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="reveal max-w-3xl">
+                    <p class="pill pill-dark">Sección especializada</p>
+                    <h2 class="text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">Estudios y diseños hidrológicos e hidráulicos</h2>
+                    <p class="mt-5 text-lg leading-relaxed text-gray-200">Analizamos y modelamos el comportamiento del agua en cuencas y cauces para que su proyecto se diseñe de forma segura y cumpla los requisitos de la autoridad ambiental.</p>
+                </div>
+
+                <div class="mt-12 grid gap-6 lg:grid-cols-3">
+                    <article class="reveal dark-card">
+                        <span class="dark-card-icon"><svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#cloud-rain"></use></svg></span>
+                        <h3 class="text-xl font-bold">Estudios hidrológicos</h3>
+                        <ul class="check-list check-list-dark mt-4">
+                            <li>Caracterización morfométrica de cuencas.</li>
+                            <li>Análisis de lluvias y curvas de intensidad, duración y frecuencia (IDF).</li>
+                            <li>Caudales máximos, medios y mínimos para diferentes periodos de retorno.</li>
+                            <li>Estimación de crecientes.</li>
+                        </ul>
+                        <button type="button" class="quote-btn quote-btn-dark" data-service="Estudios hidrológicos" data-group="Estudios hidrológicos e hidráulicos">Cotizar este estudio</button>
+                    </article>
+                    <article class="reveal dark-card">
+                        <span class="dark-card-icon"><svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#waves"></use></svg></span>
+                        <h3 class="text-xl font-bold">Modelación hidráulica</h3>
+                        <ul class="check-list check-list-dark mt-4">
+                            <li>Modelación de cauces y estructuras (p. ej., HEC-RAS).</li>
+                            <li>Zonas de inundación para distintos escenarios.</li>
+                            <li>Insumos técnicos para la delimitación de la ronda hídrica.</li>
+                            <li>Análisis de socavación en cauces y estructuras.</li>
+                        </ul>
+                        <button type="button" class="quote-btn quote-btn-dark" data-service="Modelación hidráulica" data-group="Estudios hidrológicos e hidráulicos">Cotizar este estudio</button>
+                    </article>
+                    <article class="reveal dark-card">
+                        <span class="dark-card-icon"><svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#drafting-compass"></use></svg></span>
+                        <h3 class="text-xl font-bold">Diseño de obras hidráulicas</h3>
+                        <ul class="check-list check-list-dark mt-4">
+                            <li>Drenajes pluviales.</li>
+                            <li>Alcantarillas y box culverts.</li>
+                            <li>Canales.</li>
+                            <li>Obras de protección de orillas y control de erosión.</li>
+                        </ul>
+                        <button type="button" class="quote-btn quote-btn-dark" data-service="Diseño de obras hidráulicas" data-group="Estudios hidrológicos e hidráulicos">Cotizar este diseño</button>
+                    </article>
+                </div>
+
+                <div class="reveal mt-10 grid gap-6 rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8 lg:grid-cols-2">
+                    <div>
+                        <h3 class="font-bold text-mint">¿Para qué los necesita?</h3>
+                        <ul class="mt-3 flex flex-wrap gap-2 text-sm">
+                            <li class="chip-dark">Permisos de ocupación de cauce</li>
+                            <li class="chip-dark">Concesiones de agua</li>
+                            <li class="chip-dark">Vías e infraestructura</li>
+                            <li class="chip-dark">Gestión del riesgo por inundación</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-mint">¿Qué recibe?</h3>
+                        <ul class="mt-3 flex flex-wrap gap-2 text-sm">
+                            <li class="chip-dark">Memorias de cálculo</li>
+                            <li class="chip-dark">Modelos hidráulicos</li>
+                            <li class="chip-dark">Planos y mapas georreferenciados</li>
+                            <li class="chip-dark">Informe técnico</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ TRÁMITES AMBIENTALES (sección aparte) ============ -->
+        <section id="tramites" class="bg-white py-20 sm:py-24">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="reveal max-w-3xl">
+                    <p class="pill">Trámites ambientales</p>
+                    <h2 class="section-title">Gestionamos sus trámites ante la autoridad ambiental</h2>
+                    <p class="mt-5 text-lg leading-relaxed text-gray-600">Preparamos los soportes técnicos, diligenciamos los formularios, radicamos la solicitud ante la autoridad competente (Corpocesar, ANLA u otras, según el caso) y atendemos los requerimientos hasta la decisión.</p>
+                </div>
+
+                <ol class="reveal mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" aria-label="Cómo gestionamos un trámite">
+                    <li class="step-chip"><span class="step-num">1</span>Revisión de requisitos</li>
+                    <li class="step-chip"><span class="step-num">2</span>Estudios y soportes técnicos</li>
+                    <li class="step-chip"><span class="step-num">3</span>Radicación de la solicitud</li>
+                    <li class="step-chip"><span class="step-num">4</span>Seguimiento y requerimientos</li>
+                </ol>
+
+                <div class="mt-10 grid gap-6 md:grid-cols-2">
+                    <article class="reveal card">
+                        <div class="card-head">
+                            <span class="card-icon"><svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#droplet"></use></svg></span>
+                            <h3 class="card-title">Agua</h3>
+                        </div>
+                        <ul class="check-list mt-5">
+                            <li>Concesión de aguas superficiales.</li>
+                            <li>Permiso de exploración de aguas subterráneas.</li>
+                            <li>Concesión de aguas subterráneas.</li>
+                            <li>Permiso de vertimientos.</li>
+                            <li>Permiso de ocupación de cauce, playas y lechos.</li>
+                        </ul>
+                        <button type="button" class="quote-btn" data-service="Trámites de agua (concesiones, vertimientos, ocupación de cauce)" data-group="Trámites ambientales">Cotizar trámite</button>
+                    </article>
+                    <article class="reveal card">
+                        <div class="card-head">
+                            <span class="card-icon"><svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#tree-pine"></use></svg></span>
+                            <h3 class="card-title">Flora y bosques</h3>
+                        </div>
+                        <ul class="check-list mt-5">
+                            <li>Aprovechamiento forestal único y persistente.</li>
+                            <li>Aprovechamiento de árboles aislados.</li>
+                            <li>Soportes técnicos para especies en veda.</li>
+                        </ul>
+                        <button type="button" class="quote-btn" data-service="Trámites forestales (aprovechamiento, especies en veda)" data-group="Trámites ambientales">Cotizar trámite</button>
+                    </article>
+                    <article class="reveal card">
+                        <div class="card-head">
+                            <span class="card-icon"><svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#biohazard"></use></svg></span>
+                            <h3 class="card-title">Residuos peligrosos</h3>
+                        </div>
+                        <ul class="check-list mt-5">
+                            <li>Inscripción en el Registro de Generadores de Residuos Peligrosos (RESPEL).</li>
+                            <li>Actualización y reporte anual de la información.</li>
+                        </ul>
+                        <button type="button" class="quote-btn" data-service="Registro de residuos peligrosos (RESPEL)" data-group="Trámites ambientales">Cotizar trámite</button>
+                    </article>
+                    <article class="reveal card">
+                        <div class="card-head">
+                            <span class="card-icon"><svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#file-badge"></use></svg></span>
+                            <h3 class="card-title">Licenciamiento ambiental</h3>
+                        </div>
+                        <ul class="check-list mt-5">
+                            <li>Licencia ambiental con Estudio de Impacto Ambiental (EIA).</li>
+                            <li>Planes de Manejo Ambiental (PMA).</li>
+                            <li>Modificación de licencias e instrumentos ambientales.</li>
+                        </ul>
+                        <button type="button" class="quote-btn" data-service="Licencia ambiental (EIA) y modificaciones" data-group="Trámites ambientales">Cotizar trámite</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SERVICIOS FORESTALES (resumido) ============ -->
+        <section id="forestal" class="bg-green-50/60 py-20 sm:py-24">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="reveal max-w-3xl">
+                    <p class="pill pill-white">Servicios forestales</p>
+                    <h2 class="section-title">Información forestal confiable y georreferenciada</h2>
+                    <p class="mt-5 text-lg leading-relaxed text-gray-600">Levantamos en campo la información que necesitan sus trámites, planes y proyectos, y la entregamos en bases de datos e informes técnicos.</p>
+                </div>
+
+                <div class="mt-12 grid gap-6 lg:grid-cols-3">
+                    <article class="reveal card">
+                        <div class="card-head">
+                            <span class="card-icon"><svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#trees"></use></svg></span>
+                            <h3 class="card-title">Inventarios forestales</h3>
+                        </div>
+                        <ul class="check-list mt-5">
+                            <li>Censo e identificación de individuos arbóreos.</li>
+                            <li>Medición de DAP, altura total y comercial.</li>
+                            <li>Área basal, volumen e índices ecológicos.</li>
+                            <li>Evaluación del estado fitosanitario.</li>
+                            <li>Georreferenciación, marcación, bases de datos e informes.</li>
+                        </ul>
+                        <button type="button" class="quote-btn" data-service="Inventario forestal" data-group="Servicios forestales">Cotizar inventario</button>
+                    </article>
+                    <article class="reveal card">
+                        <div class="card-head">
+                            <span class="card-icon"><svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#sprout"></use></svg></span>
+                            <h3 class="card-title">Caracterización de epífitas</h3>
+                        </div>
+                        <ul class="check-list mt-5">
+                            <li>Identificación de flora epífita vascular y no vascular.</li>
+                            <li>Caracterización de especies y árboles hospederos (forófitos).</li>
+                            <li>Registro de abundancia, cobertura y distribución.</li>
+                            <li>Georreferenciación, registro fotográfico e informe técnico.</li>
+                        </ul>
+                        <button type="button" class="quote-btn" data-service="Caracterización de epífitas" data-group="Servicios forestales">Cotizar caracterización</button>
+                    </article>
+                    <article class="reveal card">
+                        <div class="card-head">
+                            <span class="card-icon"><svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#axe"></use></svg></span>
+                            <h3 class="card-title">Aprovechamiento forestal</h3>
+                        </div>
+                        <ul class="check-list mt-5">
+                            <li>Soportes técnicos para los trámites de aprovechamiento forestal.</li>
+                            <li>Apoyo en planes de aprovechamiento.</li>
+                            <li>Seguimiento de las intervenciones autorizadas.</li>
+                        </ul>
+                        <button type="button" class="quote-btn" data-service="Aprovechamiento forestal" data-group="Servicios forestales">Cotizar soporte</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ GESTIÓN Y PLANIFICACIÓN AMBIENTAL ============ -->
+        <section id="gestion" class="bg-white py-20 sm:py-24">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="reveal max-w-3xl">
+                    <p class="pill">Gestión y planificación ambiental</p>
+                    <h2 class="section-title">Planes, estudios y capacitación</h2>
+                    <p class="mt-5 text-lg leading-relaxed text-gray-600">Instrumentos de planificación y gestión para que su organización o municipio cumpla sus obligaciones ambientales y mejore su desempeño.</p>
+                </div>
+
+                <div class="mt-12 flex flex-wrap justify-center gap-6">
+                    <article id="recurso-hidrico" class="reveal card card-third">
+                        <div class="card-head">
+                            <span class="card-icon"><svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#droplets"></use></svg></span>
+                            <h3 class="card-title">Recurso hídrico</h3>
+                        </div>
+                        <ul class="check-list mt-5">
+                            <li>Programa para el Uso Eficiente y Ahorro del Agua (PUEAA).</li>
+                            <li>Tasa por utilización de agua (TUA): cálculo, liquidación y anexos técnicos.</li>
+                            <li>Asesoría en el uso y ahorro del recurso hídrico.</li>
+                        </ul>
+                        <button type="button" class="quote-btn" data-service="Recurso hídrico (PUEAA, TUA)" data-group="Gestión y planificación ambiental">Cotizar este servicio</button>
+                    </article>
+                    <article id="sig" class="reveal card card-third">
+                        <div class="card-head">
+                            <span class="card-icon"><svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#map"></use></svg></span>
+                            <h3 class="card-title">Ordenamiento territorial y SIG</h3>
+                        </div>
+                        <ul class="check-list mt-5">
+                            <li>Sistemas de Información Geográfica (SIG): digitalización, análisis espacial y cartografía técnica.</li>
+                            <li>Zonificación ambiental y escenarios prospectivos.</li>
+                            <li>Insumos para el ordenamiento y manejo de cuencas.</li>
+                        </ul>
+                        <button type="button" class="quote-btn" data-service="Ordenamiento territorial y SIG" data-group="Gestión y planificación ambiental">Cotizar este servicio</button>
+                    </article>
+                    <article id="residuos" class="reveal card card-third">
+                        <div class="card-head">
+                            <span class="card-icon"><svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#recycle"></use></svg></span>
+                            <h3 class="card-title">Planes de gestión de residuos</h3>
+                        </div>
+                        <ul class="check-list mt-5">
+                            <li>PGIRS: Plan de Gestión Integral de Residuos Sólidos.</li>
+                            <li>PEGIRASA: Plan de Gestión Integral de Residuos generados en la Atención en Salud y otras actividades.</li>
+                            <li>Diagnóstico de generación y clasificación de residuos.</li>
+                            <li>Programas, indicadores de seguimiento y evaluación.</li>
+                        </ul>
+                        <button type="button" class="quote-btn" data-service="Planes de gestión de residuos (PGIRS, PEGIRASA)" data-group="Gestión y planificación ambiental">Cotizar este servicio</button>
+                    </article>
+                    <article id="pma" class="reveal card card-third">
+                        <div class="card-head">
+                            <span class="card-icon"><svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#clipboard-list"></use></svg></span>
+                            <h3 class="card-title">Planes de manejo ambiental</h3>
+                        </div>
+                        <ul class="check-list mt-5">
+                            <li>Identificación y evaluación de impactos ambientales.</li>
+                            <li>Diseño de medidas de manejo (fichas).</li>
+                            <li>Programas de seguimiento y monitoreo.</li>
+                        </ul>
+                        <button type="button" class="quote-btn" data-service="Plan de Manejo Ambiental (PMA)" data-group="Gestión y planificación ambiental">Cotizar este servicio</button>
+                    </article>
+                    <article id="educacion" class="reveal card card-third">
+                        <div class="card-head">
+                            <span class="card-icon"><svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#graduation-cap"></use></svg></span>
+                            <h3 class="card-title">Educación ambiental</h3>
+                        </div>
+                        <ul class="check-list mt-5">
+                            <li>Capacitaciones técnicas y de sensibilización.</li>
+                            <li>Modalidad presencial o virtual.</li>
+                            <li>Módulos teóricos y prácticos adaptados a su organización o comunidad.</li>
+                        </ul>
+                        <button type="button" class="quote-btn" data-service="Educación ambiental" data-group="Gestión y planificación ambiental">Cotizar este servicio</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CÓMO TRABAJAMOS ============ -->
+        <section id="como-trabajamos" class="bg-neutral py-20 sm:py-24">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="reveal mx-auto max-w-3xl text-center">
+                    <p class="pill pill-white">Cómo trabajamos</p>
+                    <h2 class="section-title">Un proceso claro, de la primera llamada a la entrega</h2>
+                </div>
+                <ol class="process mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-5">
+                    <li class="reveal process-step">
+                        <span class="process-num">1</span>
+                        <h3 class="process-title">Diagnóstico inicial</h3>
+                        <p class="process-text">Escuchamos su necesidad, revisamos la información disponible y, si hace falta, visitamos el sitio.</p>
+                    </li>
+                    <li class="reveal process-step">
+                        <span class="process-num">2</span>
+                        <h3 class="process-title">Propuesta y cotización</h3>
+                        <p class="process-text">Le enviamos por escrito el alcance, los entregables, el tiempo estimado y el valor.</p>
+                    </li>
+                    <li class="reveal process-step">
+                        <span class="process-num">3</span>
+                        <h3 class="process-title">Campo y elaboración técnica</h3>
+                        <p class="process-text">Levantamos la información, hacemos los análisis y modelaciones, y elaboramos los documentos según la norma vigente.</p>
+                    </li>
+                    <li class="reveal process-step">
+                        <span class="process-num">4</span>
+                        <h3 class="process-title">Radicación y seguimiento</h3>
+                        <p class="process-text">Cuando aplica, radicamos ante la autoridad competente y atendemos sus requerimientos.</p>
+                    </li>
+                    <li class="reveal process-step">
+                        <span class="process-num">5</span>
+                        <h3 class="process-title">Entrega y acompañamiento</h3>
+                        <p class="process-text">Entregamos documentos e información georreferenciada, y le orientamos sobre las obligaciones posteriores.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ============ PORTAFOLIO PDF ============ -->
+        <section id="portafolio" class="bg-primary">
+            <div class="mx-auto flex max-w-7xl flex-col items-start gap-6 px-4 py-14 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+                <div class="flex items-start gap-5">
+                    <span class="hidden h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-mint sm:flex"><svg class="i h-7 w-7" aria-hidden="true"><use href="assets/icons.svg#file-down"></use></svg></span>
+                    <div>
+                        <h2 class="text-2xl font-bold text-white sm:text-3xl">Descargue nuestro portafolio de servicios</h2>
+                        <p class="mt-2 text-gray-200">Toda la información de MAMCA S.A.S. en un PDF, listo para compartir con su equipo o entidad.</p>
+                    </div>
+                </div>
+                <a href="assets/portafolio-mamca.pdf" download="Portafolio-MAMCA-SAS.pdf" data-track="pdf_download" class="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-7 py-4 font-bold text-primary shadow-lg transition hover:bg-mint">
+                    <svg class="i h-5 w-5" aria-hidden="true"><use href="assets/icons.svg#download"></use></svg>
+                    Descargar portafolio (PDF)
+                </a>
+            </div>
+        </section>
+
+        <!-- ============ PREGUNTAS FRECUENTES ============ -->
+        <section id="preguntas-frecuentes" class="bg-white py-20 sm:py-24">
+            <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+                <div class="reveal text-center">
+                    <p class="pill">Preguntas frecuentes</p>
+                    <h2 class="section-title">Resolvemos sus dudas</h2>
+                </div>
+                <div class="mt-12 space-y-4">
+                    <details class="faq reveal">
+                        <summary>¿Ante qué autoridades gestionan los trámites?<svg class="i faq-chevron h-5 w-5" aria-hidden="true"><use href="assets/icons.svg#chevron-down"></use></svg></summary>
+                        <p>Ante la autoridad ambiental competente según el proyecto: principalmente Corpocesar en el departamento del Cesar, y otras corporaciones autónomas regionales o la ANLA cuando corresponde.</p>
+                    </details>
+                    <details class="faq reveal">
+                        <summary>¿Cuánto tarda un trámite ambiental?<svg class="i faq-chevron h-5 w-5" aria-hidden="true"><use href="assets/icons.svg#chevron-down"></use></svg></summary>
+                        <p>Depende del tipo de trámite y de los tiempos de evaluación de la autoridad ambiental. En la cotización le indicamos el tiempo estimado para elaborar los documentos. Después de radicar, hacemos seguimiento y respondemos los requerimientos para evitar demoras.</p>
+                    </details>
+                    <details class="faq reveal">
+                        <summary>¿Garantizan que el permiso o la licencia será aprobado?<svg class="i faq-chevron h-5 w-5" aria-hidden="true"><use href="assets/icons.svg#chevron-down"></use></svg></summary>
+                        <p>La decisión final corresponde siempre a la autoridad ambiental. Lo que sí garantizamos es un trabajo técnico sólido, ajustado a la normativa vigente, y el acompañamiento en los requerimientos hasta que la autoridad decida.</p>
+                    </details>
+                    <details class="faq reveal">
+                        <summary>¿Qué documentos necesito para empezar?<svg class="i faq-chevron h-5 w-5" aria-hidden="true"><use href="assets/icons.svg#chevron-down"></use></svg></summary>
+                        <p>Por lo general: documento de identidad o certificado de existencia y representación legal, certificado de tradición y libertad del predio (o autorización del propietario) y la descripción de la actividad o proyecto. En el diagnóstico inicial le indicamos los requisitos exactos de su caso.</p>
+                    </details>
+                    <details class="faq reveal">
+                        <summary>¿Trabajan con entidades públicas?<svg class="i faq-chevron h-5 w-5" aria-hidden="true"><use href="assets/icons.svg#chevron-down"></use></svg></summary>
+                        <p>Sí. Además de empresas y personas naturales, acompañamos a entidades públicas y presentamos cotizaciones y propuestas técnicas según los requisitos de cada proceso de contratación.</p>
+                    </details>
+                    <details class="faq reveal">
+                        <summary>¿Atienden proyectos fuera de Bosconia?<svg class="i faq-chevron h-5 w-5" aria-hidden="true"><use href="assets/icons.svg#chevron-down"></use></svg></summary>
+                        <p>Sí. Nuestra sede está en Bosconia (Cesar) y atendemos proyectos en otros municipios. Las visitas de campo y los desplazamientos se incluyen en la cotización.</p>
+                    </details>
+                    <details class="faq reveal">
+                        <summary>¿Las capacitaciones pueden ser virtuales?<svg class="i faq-chevron h-5 w-5" aria-hidden="true"><use href="assets/icons.svg#chevron-down"></use></svg></summary>
+                        <p>Sí. Las capacitaciones de educación ambiental se pueden hacer de forma presencial o virtual, con módulos adaptados al público y a los objetivos de su organización.</p>
+                    </details>
+                    <details class="faq reveal">
+                        <summary>¿Cómo solicito una cotización?<svg class="i faq-chevron h-5 w-5" aria-hidden="true"><use href="assets/icons.svg#chevron-down"></use></svg></summary>
+                        <p>Escríbanos por WhatsApp, por correo o con el formulario de esta página. Nos ayuda que nos cuente la ubicación del proyecto, el tipo de actividad y qué documentos tiene disponibles.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CONTACTO ============ -->
+        <section id="contacto" class="bg-neutral py-20 sm:py-24">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="gap-16 lg:grid lg:grid-cols-2">
+                    <div class="reveal mb-12 lg:mb-0">
+                        <p class="pill pill-white">Contacto</p>
+                        <h2 class="section-title">Hablemos de su proyecto</h2>
+                        <p class="mt-5 text-lg text-gray-600">¿Necesita un trámite ambiental, un estudio hidrológico o un inventario forestal? Cuéntenos su caso y le respondemos con una propuesta.</p>
+
+                        <ul class="mt-10 space-y-4">
+                            <li>
+                                <a href="https://wa.me/573154061408?text=Hola%20MAMCA%20S.A.S.%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." target="_blank" rel="noopener" data-track="whatsapp_contacto" class="contact-row">
+                                    <span class="contact-icon"><svg class="i h-6 w-6" aria-hidden="true"><use href="assets/icons.svg#whatsapp"></use></svg></span>
+                                    <span><span class="contact-label">WhatsApp y teléfono</span><span class="contact-value">+57 315 406 1408</span></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:mamca.consultoria@gmail.com?subject=Solicitud%20de%20informaci%C3%B3n" data-track="email_contacto" class="contact-row">
+                                    <span class="contact-icon"><svg class="i h-6 w-6" aria-hidden="true"><use href="assets/icons.svg#mail"></use></svg></span>
+                                    <span><span class="contact-label">Correo</span><span class="contact-value">mamca.consultoria@<wbr>gmail.com</span></span>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="contact-row">
+                                    <span class="contact-icon"><svg class="i h-6 w-6" aria-hidden="true"><use href="assets/icons.svg#map-pin"></use></svg></span>
+                                    <span><span class="contact-label">Ubicación</span><span class="contact-value">Bosconia, Cesar, Colombia</span></span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contact-row">
+                                    <span class="contact-icon"><svg class="i h-6 w-6" aria-hidden="true"><use href="assets/icons.svg#badge-check"></use></svg></span>
+                                    <span><span class="contact-label">NIT</span><span class="contact-value">901.986.614-1</span></span>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <a href="tel:+573154061408" class="mt-8 inline-flex items-center gap-2 font-bold text-leaf hover:text-primary">
+                            <svg class="i h-5 w-5" aria-hidden="true"><use href="assets/icons.svg#phone"></use></svg>
+                            Prefiero llamar
+                        </a>
+                    </div>
+
+                    <div class="reveal rounded-3xl border border-gray-100 bg-white p-6 shadow-2xl sm:p-10">
+                        <h3 class="text-2xl font-bold text-gray-900">Escríbanos</h3>
+                        <p class="mt-2 text-sm text-gray-600">Al enviar, se abrirá WhatsApp con su mensaje listo. Solo tiene que presionar <strong>Enviar</strong>.</p>
+                        <noscript><p class="mt-4 rounded-lg bg-amber-50 p-3 text-sm text-amber-900">Para usar el formulario active JavaScript, o escríbanos directamente por <a class="font-bold underline" href="https://wa.me/573154061408">WhatsApp</a>.</p></noscript>
+
+                        <form id="contact-form" class="mt-8 space-y-5" novalidate>
+                            <div class="grid gap-5 sm:grid-cols-2">
+                                <div>
+                                    <label for="f-nombre" class="field-label">Nombre completo <span class="text-red-700" aria-hidden="true">*</span></label>
+                                    <input id="f-nombre" name="nombre" type="text" required autocomplete="name" class="field" placeholder="Su nombre">
                                 </div>
                                 <div>
-                                    <p class="font-bold text-lg text-secondary">Excelencia Garantizada</p>
-                                    <p class="text-sm text-gray-1200">En cada proyecto</p>
+                                    <label for="f-empresa" class="field-label">Empresa o entidad <span class="font-normal text-gray-500">(opcional)</span></label>
+                                    <input id="f-empresa" name="empresa" type="text" autocomplete="organization" class="field" placeholder="Nombre de la empresa">
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="reveal-right">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 text-secondary text-sm font-bold uppercase tracking-wider mb-4">
-                        <span class="w-2 h-2 rounded-full bg-secondary"></span>
-                        Sobre Nosotros
-                    </div>
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
-                        Expertos en <span class="text-primary relative inline-block">
-                            Soluciones
-                            <svg class="absolute w-full h-3 -bottom-1 left-0 text-secondary opacity-30" viewBox="0 0 100 10" preserveAspectRatio="none">
-                                <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="3" fill="none" />
-                            </svg>
-                        </span>
-                    </h2>
-                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                        En <span class="font-bold text-primary">MAMCA S.A.S</span> somos más que consultores; somos aliados estratégicos. Acompañamos a través de soluciones técnicas, prácticas y ajustadas a la normativa vigente. Nos especializamos en la gestión, planificación, diseño y diagnóstico de componentes ambientales y sanitarios, estudios y modelaciones hidrológicas e hidráulicas. Además, ofrecemos asesoría completa en la gestión y radicación de trámites ambientales ante autoridades competentes, facilitando los procesos y asegurando resultados eficientes y sostenibles.
-                    </p>
-                    
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-                        <div class="flex items-start gap-4">
-                            <div class="bg-neutral p-2 rounded-lg text-secondary"><i data-lucide="check-circle-2" class="h-6 w-6"></i></div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">Normativa Vigente</h4>
-                                <p class="text-sm text-gray-600">Cumplimiento legal asegurado.</p>
+                            <div class="grid gap-5 sm:grid-cols-2">
+                                <div>
+                                    <label for="f-municipio" class="field-label">Municipio del proyecto</label>
+                                    <input id="f-municipio" name="municipio" type="text" autocomplete="address-level2" class="field" placeholder="Ej.: Bosconia, Cesar">
+                                </div>
+                                <div>
+                                    <label for="f-servicio" class="field-label">Servicio de interés <span class="text-red-700" aria-hidden="true">*</span></label>
+                                    <div class="relative">
+                                        <select id="f-servicio" name="servicio" required class="field appearance-none pr-10">
+                                            <option value="">Seleccione una opción</option>
+                                            <!-- Las opciones se generan solas a partir de los botones "Cotizar" de cada servicio (script.js) -->
+                                        </select>
+                                        <svg class="i pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-500" aria-hidden="true"><use href="assets/icons.svg#chevron-down"></use></svg>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="bg-neutral p-2 rounded-lg text-secondary"><i data-lucide="file-check" class="h-6 w-6"></i></div>
                             <div>
-                                <h4 class="font-bold text-gray-900">Gestión de Trámites</h4>
-                                <p class="text-sm text-gray-600">Agilidad y precisión.</p>
+                                <label for="f-mensaje" class="field-label">Mensaje <span class="text-red-700" aria-hidden="true">*</span></label>
+                                <textarea id="f-mensaje" name="mensaje" rows="4" required class="field resize-y" placeholder="Cuéntenos sobre su proyecto o necesidad"></textarea>
                             </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="bg-neutral p-2 rounded-lg text-secondary"><i data-lucide="leaf" class="h-6 w-6"></i></div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">Sostenibilidad</h4>
-                                <p class="text-sm text-gray-600">Enfoque a largo plazo.</p>
+                            <div class="flex items-start gap-3">
+                                <input id="f-autoriza" name="autoriza" type="checkbox" required class="mt-1 h-5 w-5 shrink-0 rounded border-gray-300 accent-leaf">
+                                <label for="f-autoriza" class="text-sm text-gray-700">Autorizo a MAMCA S.A.S. a tratar mis datos personales para atender esta solicitud, de acuerdo con la <a href="politica-de-privacidad.html" class="font-semibold text-leaf underline hover:text-primary">Política de tratamiento de datos personales</a>. <span class="text-red-700" aria-hidden="true">*</span></label>
                             </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="bg-neutral p-2 rounded-lg text-secondary"><i data-lucide="shield-check" class="h-6 w-6"></i></div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">Respaldo Técnico</h4>
-                                <p class="text-sm text-gray-600">Equipo cualificado.</p>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Botón Modificado para abrir Modal -->
-                    <button id="mission-btn" class="inline-flex items-center gap-2 text-white bg-primary hover:bg-primary/90 px-6 py-3 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
-                        Conoce más sobre nuestra misión <i data-lucide="arrow-right" class="h-4 w-4"></i>
-                    </button>
+                            <p id="form-error" class="hidden rounded-lg bg-red-50 p-3 text-sm font-medium text-red-800" role="alert"></p>
+
+                            <button type="submit" class="flex w-full items-center justify-center gap-2 rounded-xl bg-whatsapp px-6 py-4 text-lg font-bold text-ink shadow-lg transition hover:bg-green-400">
+                                <svg class="i h-6 w-6" aria-hidden="true"><use href="assets/icons.svg#whatsapp"></use></svg>
+                                Enviar por WhatsApp
+                            </button>
+                            <p id="form-status" class="text-center text-sm text-gray-600" aria-live="polite"></p>
+                            <p class="text-center text-sm text-gray-600">¿Prefiere el correo? <a id="form-mail-link" href="mailto:mamca.consultoria@gmail.com" data-track="email_formulario" class="font-semibold text-leaf underline hover:text-primary">Envíe el mismo mensaje por correo</a></p>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Services Section -->
-    <section id="services" class="py-24 bg-neutral relative">
-        <!-- Decorative background elements -->
-        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-        <div class="absolute bottom-0 right-0 p-10 opacity-5 pointer-events-none">
-            <i data-lucide="sprout" class="w-96 h-96"></i>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-20 reveal-up">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-gray-200 text-secondary text-sm font-bold uppercase tracking-wider mb-4 shadow-sm">
-                    Nuestros Servicios
+    <!-- ============ PIE DE PÁGINA ============ -->
+    <footer class="bg-primary text-white">
+        <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+            <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+                <div class="lg:col-span-2">
+                    <a href="#inicio" class="inline-flex items-center gap-3" aria-label="MAMCA S.A.S., ir al inicio">
+                        <span class="flex h-14 w-14 items-center justify-center rounded-full bg-white p-1.5"><img src="assets/logo-emblema.png" width="160" height="160" alt="" class="h-full w-full object-contain"></span>
+                        <span class="text-2xl font-extrabold tracking-wide">MAMCA S.A.S.</span>
+                    </a>
+                    <p class="mt-5 max-w-sm text-sm leading-relaxed text-gray-300">Consultoría ambiental y sanitaria comprometida con el desarrollo sostenible. Soluciones técnicas y normativas para empresas, entidades públicas y personas naturales.</p>
+                    <p class="mt-3 text-sm text-gray-300">NIT 901.986.614-1</p>
+                    <ul class="mt-6 flex gap-3" aria-label="Canales de contacto y redes sociales">
+                        <li><a href="https://wa.me/573154061408" target="_blank" rel="noopener" data-track="whatsapp_footer" class="social-btn" aria-label="WhatsApp"><svg class="i h-5 w-5" aria-hidden="true"><use href="assets/icons.svg#whatsapp"></use></svg></a></li>
+                        <li><a href="mailto:mamca.consultoria@gmail.com" data-track="email_footer" class="social-btn" aria-label="Correo electrónico"><svg class="i h-5 w-5" aria-hidden="true"><use href="assets/icons.svg#mail"></use></svg></a></li>
+                        <!-- Redes sociales: se muestran solas cuando se pega el enlace en CONFIG.redes (script.js) -->
+                        <li hidden data-social="facebook"><a href="#" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook"><svg class="i h-5 w-5" aria-hidden="true"><use href="assets/icons.svg#facebook"></use></svg></a></li>
+                        <li hidden data-social="instagram"><a href="#" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram"><svg class="i h-5 w-5" aria-hidden="true"><use href="assets/icons.svg#instagram"></use></svg></a></li>
+                        <li hidden data-social="linkedin"><a href="#" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn"><svg class="i h-5 w-5" aria-hidden="true"><use href="assets/icons.svg#linkedin"></use></svg></a></li>
+                    </ul>
                 </div>
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Gestión Integral</h2>
-                <p class="text-xl text-gray-600">Desarrollamos soluciones técnicas ajustadas a las necesidades específicas de nuestros clientes.</p>
-            </div>
-
-            <!-- Changed Grid to Flex wrap for better centering of odd items -->
-            <div class="flex flex-wrap justify-center gap-8">
-                
-                <!-- Service 1 -->
-                <div class="service-card group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col overflow-hidden reveal-up">
-                    <div class="p-8 flex-grow relative">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-green-50 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
-                        <div class="relative z-10">
-                            <div class="h-16 w-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                                <i data-lucide="droplets" class="h-8 w-8"></i>
-                            </div>
-                            <h4 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Recurso Hídrico</h4>
-                            <p class="text-gray-600 mb-6 leading-relaxed">Asesoría especializada en trámites, estudios y uso eficiente del agua.</p>
-                            
-                            <!-- Accordion Content -->
-                            <div class="service-details max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out">
-                                <div class="pt-4 border-t border-gray-100 space-y-4">
-                                    <div class="bg-neutral/50 p-4 rounded-xl">
-                                        <h5 class="font-bold text-primary text-sm mb-2 flex items-center gap-2"><i data-lucide="file-text" class="w-4 h-4"></i> Trámite TUA</h5>
-                                        <p class="text-xs text-gray-600">Cálculo, liquidación y anexos técnicos ante la autoridad.</p>
-                                    </div>
-                                    <div class="bg-neutral/50 p-4 rounded-xl">
-                                        <h5 class="font-bold text-primary text-sm mb-2 flex items-center gap-2"><i data-lucide="activity" class="w-4 h-4"></i> Hidrología</h5>
-                                        <p class="text-xs text-gray-600">Modelación y diseño de drenajes y obras hidráulicas.</p>
-                                    </div>
-                                    <div class="bg-neutral/50 p-4 rounded-xl">
-                                        <h5 class="font-bold text-primary text-sm mb-2 flex items-center gap-2"><i data-lucide="bar-chart-3" class="w-4 h-4"></i> PUEAA</h5>
-                                        <p class="text-xs text-gray-600">Optimización y ahorro del recurso hídrico.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-gray-50/50 border-t border-gray-100 mt-auto">
-                        <button class="toggle-service-btn w-full py-3 rounded-xl flex items-center justify-center text-sm font-bold text-primary hover:bg-primary hover:text-white transition-all duration-300">
-                            <span class="btn-text">Ver detalles</span>
-                            <i data-lucide="chevron-down" class="ml-2 h-4 w-4 transform transition-transform duration-300 icon-arrow"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="service-card group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col overflow-hidden reveal-up" style="transition-delay: 100ms;">
-                    <div class="p-8 flex-grow relative">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
-                        <div class="relative z-10">
-                            <div class="h-16 w-16 bg-accent/5 rounded-2xl flex items-center justify-center mb-6 text-accent group-hover:bg-accent group-hover:text-white transition-colors duration-300">
-                                <i data-lucide="map" class="h-8 w-8"></i>
-                            </div>
-                            <h4 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-accent transition-colors">Ordenamiento y SIG</h4>
-                            <p class="text-gray-600 mb-6 leading-relaxed">Sistemas de Información Geográfica y planificación territorial avanzada.</p>
-                            
-                            <div class="service-details max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out">
-                                <div class="pt-4 border-t border-gray-100 space-y-4">
-                                    <div class="bg-neutral/50 p-4 rounded-xl">
-                                        <h5 class="font-bold text-accent text-sm mb-2 flex items-center gap-2"><i data-lucide="layers" class="w-4 h-4"></i> SIG Proyectos</h5>
-                                        <p class="text-xs text-gray-600">Digitalización, análisis espacial y cartografía técnica.</p>
-                                    </div>
-                                    <div class="bg-neutral/50 p-4 rounded-xl">
-                                        <h5 class="font-bold text-accent text-sm mb-2 flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i> Zonificación</h5>
-                                        <p class="text-xs text-gray-600">Escenarios prospectivos y manejo de cuencas.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-gray-50/50 border-t border-gray-100 mt-auto">
-                        <button class="toggle-service-btn w-full py-3 rounded-xl flex items-center justify-center text-sm font-bold text-accent hover:bg-accent hover:text-white transition-all duration-300">
-                            <span class="btn-text">Ver detalles</span>
-                            <i data-lucide="chevron-down" class="ml-2 h-4 w-4 transform transition-transform duration-300 icon-arrow"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="service-card group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col overflow-hidden reveal-up" style="transition-delay: 200ms;">
-                    <div class="p-8 flex-grow relative">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-orange-50 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
-                        <div class="relative z-10">
-                            <div class="h-16 w-16 bg-orange-500/5 rounded-2xl flex items-center justify-center mb-6 text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-colors duration-300">
-                                <i data-lucide="trash-2" class="h-8 w-8"></i>
-                            </div>
-                            <h4 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors">Gestión de Residuos</h4>
-                            <p class="text-gray-600 mb-6 leading-relaxed">Planes integrales PGIRS y PEGIRASA para el manejo responsable.</p>
-                            
-                            <div class="service-details max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out">
-                                <div class="pt-4 border-t border-gray-100 space-y-4">
-                                    <div class="bg-neutral/50 p-4 rounded-xl">
-                                        <h5 class="font-bold text-orange-600 text-sm mb-2 flex items-center gap-2"><i data-lucide="clipboard-list" class="w-4 h-4"></i> Diagnóstico</h5>
-                                        <p class="text-xs text-gray-600">Análisis de generación y clasificación de residuos.</p>
-                                    </div>
-                                    <div class="bg-neutral/50 p-4 rounded-xl">
-                                        <h5 class="font-bold text-orange-600 text-sm mb-2 flex items-center gap-2"><i data-lucide="recycle" class="w-4 h-4"></i> Programas</h5>
-                                        <p class="text-xs text-gray-600">Diseño de programas, indicadores de seguimiento y evaluación del plan.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-gray-50/50 border-t border-gray-100 mt-auto">
-                        <button class="toggle-service-btn w-full py-3 rounded-xl flex items-center justify-center text-sm font-bold text-orange-600 hover:bg-orange-600 hover:text-white transition-all duration-300">
-                            <span class="btn-text">Ver detalles</span>
-                            <i data-lucide="chevron-down" class="ml-2 h-4 w-4 transform transition-transform duration-300 icon-arrow"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="service-card group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col overflow-hidden reveal-up">
-                    <div class="p-8 flex-grow relative">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-purple-50 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
-                        <div class="relative z-10">
-                            <div class="h-16 w-16 bg-purple-500/5 rounded-2xl flex items-center justify-center mb-6 text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300">
-                                <i data-lucide="file-text" class="h-8 w-8"></i>
-                            </div>
-                            <h4 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">Planes de Manejo</h4>
-                            <p class="text-gray-600 mb-6 leading-relaxed">Instrumentos de planificación para proyectos (PMA).</p>
-                            
-                            <div class="service-details max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out">
-                                <div class="pt-4 border-t border-gray-100 space-y-4">
-                                    <div class="bg-neutral/50 p-4 rounded-xl">
-                                        <h5 class="font-bold text-purple-600 text-sm mb-2 flex items-center gap-2"><i data-lucide="search" class="w-4 h-4"></i> Impactos</h5>
-                                        <p class="text-xs text-gray-600">Identificación y evaluación de impactos ambientales.</p>
-                                    </div>
-                                    <div class="bg-neutral/50 p-4 rounded-xl">
-                                        <h5 class="font-bold text-purple-600 text-sm mb-2 flex items-center gap-2"><i data-lucide="check-square" class="w-4 h-4"></i> Programas</h5>
-                                        <p class="text-xs text-gray-600">Diseño de medidas de manejo y seguimiento.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-gray-50/50 border-t border-gray-100 mt-auto">
-                        <button class="toggle-service-btn w-full py-3 rounded-xl flex items-center justify-center text-sm font-bold text-purple-600 hover:bg-purple-600 hover:text-white transition-all duration-300">
-                            <span class="btn-text">Ver detalles</span>
-                            <i data-lucide="chevron-down" class="ml-2 h-4 w-4 transform transition-transform duration-300 icon-arrow"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service 5 -->
-                <div class="service-card group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col overflow-hidden reveal-up" style="transition-delay: 100ms;">
-                    <div class="p-8 flex-grow relative">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-teal-50 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
-                        <div class="relative z-10">
-                            <div class="h-16 w-16 bg-teal-500/5 rounded-2xl flex items-center justify-center mb-6 text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors duration-300">
-                                <i data-lucide="graduation-cap" class="h-8 w-8"></i>
-                            </div>
-                            <h4 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-teal-600 transition-colors">Educación Ambiental</h4>
-                            <p class="text-gray-600 mb-6 leading-relaxed">Capacitaciones técnicas y sensibilización para fortalecer competencias.</p>
-                            
-                            <div class="service-details max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out">
-                                <div class="pt-4 border-t border-gray-100 space-y-4">
-                                    <div class="bg-neutral/50 p-4 rounded-xl">
-                                        <h5 class="font-bold text-teal-600 text-sm mb-2 flex items-center gap-2"><i data-lucide="users" class="w-4 h-4"></i> Modalidad</h5>
-                                        <p class="text-xs text-gray-600">Presencial o virtual, adaptada a sus necesidades.</p>
-                                    </div>
-                                    <div class="bg-neutral/50 p-4 rounded-xl">
-                                        <h5 class="font-bold text-teal-600 text-sm mb-2 flex items-center gap-2"><i data-lucide="book-open" class="w-4 h-4"></i> Contenido</h5>
-                                        <p class="text-xs text-gray-600">Módulos teóricos y prácticos especializados.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-gray-50/50 border-t border-gray-100 mt-auto">
-                        <button class="toggle-service-btn w-full py-3 rounded-xl flex items-center justify-center text-sm font-bold text-teal-600 hover:bg-teal-600 hover:text-white transition-all duration-300">
-                            <span class="btn-text">Ver detalles</span>
-                            <i data-lucide="chevron-down" class="ml-2 h-4 w-4 transform transition-transform duration-300 icon-arrow"></i>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-white relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:grid lg:grid-cols-2 gap-20">
-                <div class="mb-12 lg:mb-0 reveal-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 text-secondary text-sm font-bold uppercase tracking-wider mb-4">
-                        <span class="w-2 h-2 rounded-full bg-secondary"></span>
-                        Contáctanos
-                    </div>
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Empecemos tu Proyecto</h2>
-                    <p class="text-lg text-gray-600 mb-10">
-                        ¿Necesitas asesoría en trámites ambientales, estudios hidrológicos o gestión ambiental? Estamos listos para ser tu aliado estratégico.
-                    </p>
-                    
-                    <div class="space-y-8">
-                        <div class="flex items-start group p-4 rounded-xl hover:bg-neutral transition-colors">
-                            <div class="flex-shrink-0">
-                                <div class="flex items-center justify-center h-14 w-14 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                                    <i data-lucide="map-pin" class="h-6 w-6"></i>
-                                </div>
-                            </div>
-                            <div class="ml-6">
-                                <h4 class="text-xl font-bold text-gray-900">Ubicación</h4>
-                                <p class="mt-1 text-gray-600">Cesar, Colombia</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start group p-4 rounded-xl hover:bg-neutral transition-colors">
-                            <div class="flex-shrink-0">
-                                <div class="flex items-center justify-center h-14 w-14 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                                    <i data-lucide="mail" class="h-6 w-6"></i>
-                                </div>
-                            </div>
-                            <div class="ml-6">
-                                <h4 class="text-xl font-bold text-gray-900">Email</h4>
-                                <p class="mt-1 text-gray-600"><a href="mailto:contacto@mamcasas.com" class="hover:text-secondary transition-colors">mamca.consultoria@gmail.com</a></p>
-                            </div>
-                        </div>
-                        <div class="flex items-start group p-4 rounded-xl hover:bg-neutral transition-colors">
-                            <div class="flex-shrink-0">
-                                <div class="flex items-center justify-center h-14 w-14 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                                    <i data-lucide="phone" class="h-6 w-6"></i>
-                                </div>
-                            </div>
-                            <div class="ml-6">
-                                <h4 class="text-xl font-bold text-gray-900">Teléfono</h4>
-                                <p class="mt-1 text-gray-600">
-                                    <a href="https://wa.me/573154061408" target="_blank" class="hover:text-secondary transition-colors">+57 315 406 1408</a>
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Chat on WhatsApp Button -->
-                        <div class="pt-4">
-                             <a href="https://wa.me/573154061408" target="_blank" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-whatsapp hover:bg-green-600 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                                <img src="assets/whatsapp.svg" alt="" class="w-5 h-5 mr-2 filter brightness-0 invert">
-                                Chat en WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white p-8 md:p-10 rounded-3xl shadow-2xl border border-gray-100 reveal-right relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-bl-full -mr-8 -mt-8 pointer-events-none"></div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Envíanos un mensaje</h3>
-                    <form id="contact-form" class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="name" class="block text-sm font-bold text-gray-700 mb-2">Nombre</label>
-                                <input type="text" id="name" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition-all outline-none" placeholder="Tu nombre">
-                            </div>
-                            <div>
-                                <label for="phone" class="block text-sm font-bold text-gray-700 mb-2">Teléfono</label>
-                                <input type="tel" id="phone" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition-all outline-none" placeholder="Tu número">
-                            </div>
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-bold text-gray-700 mb-2">Correo Electrónico</label>
-                            <input type="email" id="email" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition-all outline-none" placeholder="tucorreo@empresa.com">
-                        </div>
-                        <div>
-                            <label for="service-select" class="block text-sm font-bold text-gray-700 mb-2">Servicio de Interés</label>
-                            <div class="relative">
-                                <select id="service-select" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition-all outline-none appearance-none cursor-pointer">
-                                    <option value="" disabled selected>Selecciona una opción</option>
-                                    <option>Gestión Recurso Hídrico</option>
-                                    <option>Ordenamiento y SIG</option>
-                                    <option>Gestión de Residuos</option>
-                                    <option>Planes de Manejo Ambiental</option>
-                                    <option>Educación Ambiental</option>
-                                    <option>Otro</option>
-                                </select>
-                                <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gray-500">
-                                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-bold text-gray-700 mb-2">Mensaje</label>
-                            <textarea id="message" rows="4" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition-all outline-none resize-none" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full py-4 px-6 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 group">
-                            <span>Enviar Mensaje</span>
-                            <i data-lucide="send" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-primary text-white relative">
-        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary via-green-400 to-secondary"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div class="col-span-1 md:col-span-2">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="bg-white/10 p-2 rounded-full">
-                            <i data-lucide="leaf" class="h-6 w-6 text-secondary"></i>
-                        </div>
-                        <span class="font-bold text-2xl tracking-wide">MAMCA S.A.S</span>
-                    </div>
-                    <p class="text-gray-300 text-sm leading-relaxed max-w-sm mb-8">
-                        Consultoría ambiental y sanitaria comprometida con el desarrollo sostenible. Brindamos soluciones técnicas y legales para un futuro más verde.
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors text-white">
-                            <i data-lucide="facebook" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors text-white">
-                            <i data-lucide="instagram" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors text-white">
-                            <i data-lucide="linkedin" class="w-5 h-5"></i>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="text-lg font-bold mb-6 text-white border-b-2 border-secondary inline-block pb-1">Navegación</h4>
+                <nav aria-label="Pie de página">
+                    <h2 class="footer-title">Servicios</h2>
                     <ul class="space-y-3 text-sm text-gray-300">
-                        <li><a href="#home" class="hover:text-secondary transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Inicio</a></li>
-                        <li><a href="#about" class="hover:text-secondary transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Nosotros</a></li>
-                        <li><a href="#services" class="hover:text-secondary transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Servicios</a></li>
-                        <li><a href="#contact" class="hover:text-secondary transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Contacto</a></li>
+                        <li><a href="#hidrologia" class="footer-link">Estudios hidrológicos e hidráulicos</a></li>
+                        <li><a href="#tramites" class="footer-link">Trámites ambientales</a></li>
+                        <li><a href="#forestal" class="footer-link">Servicios forestales</a></li>
+                        <li><a href="#gestion" class="footer-link">Gestión y planificación ambiental</a></li>
+                        <li><a href="#como-trabajamos" class="footer-link">Cómo trabajamos</a></li>
+                        <li><a href="#preguntas-frecuentes" class="footer-link">Preguntas frecuentes</a></li>
                     </ul>
-                </div>
+                </nav>
                 <div>
-                    <h4 class="text-lg font-bold mb-6 text-white border-b-2 border-secondary inline-block pb-1">Contacto</h4>
+                    <h2 class="footer-title">Contacto</h2>
                     <ul class="space-y-4 text-sm text-gray-300">
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-secondary flex-shrink-0 mt-0.5"></i>
-                            <span>Cesar, Colombia</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="phone" class="w-5 h-5 text-secondary flex-shrink-0"></i>
-                            <span>+57 315 406 1408</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="mail" class="w-5 h-5 text-secondary flex-shrink-0"></i>
-                            <a href="mailto:contacto@mamcasas.com" class="hover:text-white transition-colors">mamca.consultoria@gmail.com</a>
-                        </li>
+                        <li class="flex items-start gap-3"><svg class="i mt-0.5 h-5 w-5 text-mint" aria-hidden="true"><use href="assets/icons.svg#map-pin"></use></svg><span>Bosconia, Cesar, Colombia</span></li>
+                        <li class="flex items-start gap-3"><svg class="i mt-0.5 h-5 w-5 text-mint" aria-hidden="true"><use href="assets/icons.svg#phone"></use></svg><a href="tel:+573154061408" class="footer-link">+57 315 406 1408</a></li>
+                        <li class="flex items-start gap-3"><svg class="i mt-0.5 h-5 w-5 text-mint" aria-hidden="true"><use href="assets/icons.svg#mail"></use></svg><a href="mailto:mamca.consultoria@gmail.com" class="footer-link">mamca.consultoria@<wbr>gmail.com</a></li>
+                        <li class="flex items-start gap-3"><svg class="i mt-0.5 h-5 w-5 text-mint" aria-hidden="true"><use href="assets/icons.svg#file-down"></use></svg><a href="assets/portafolio-mamca.pdf" download="Portafolio-MAMCA-SAS.pdf" data-track="pdf_download_footer" class="footer-link">Portafolio de servicios (PDF)</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-white/10 mt-16 pt-8 text-center text-sm text-gray-400">
-                <p>&copy; 2026 MAMCA S.A.S. Todos los derechos reservados.</p>
+            <div class="mt-14 flex flex-col gap-3 border-t border-white/10 pt-8 text-sm text-gray-300 sm:flex-row sm:items-center sm:justify-between">
+                <p>&copy; <span id="year">2026</span> MAMCA S.A.S. Todos los derechos reservados.</p>
+                <a href="politica-de-privacidad.html" class="footer-link">Política de tratamiento de datos personales</a>
             </div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/573154061408" target="_blank" class="whatsapp-float flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300">
-        <img src="assets/whatsapp.svg" alt="WhatsApp" class="w-8 h-8 filter brightness-0 invert">
+    <!-- Botón flotante de WhatsApp -->
+    <aside aria-label="Contacto rápido">
+    <a id="whatsapp-float" href="https://wa.me/573154061408?text=Hola%20MAMCA%20S.A.S.%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." target="_blank" rel="noopener" data-track="whatsapp_flotante" class="whatsapp-float" aria-label="Escribir por WhatsApp">
+        <svg class="i h-8 w-8" aria-hidden="true"><use href="assets/icons.svg#whatsapp"></use></svg>
     </a>
+    </aside>
 
-    <!-- Mission & Vision Modal -->
-    <div id="mission-modal" class="fixed inset-0 z-[60] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
-        <!-- Backdrop -->
-        <div id="modal-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-        
-        <!-- Content -->
-        <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-4xl w-[90%] mx-4 relative z-10 transform scale-95 transition-transform duration-300" id="modal-content">
-            <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
-                <i data-lucide="x" class="w-6 h-6"></i>
-            </button>
-            
-            <div class="text-center mb-8">
-                <h3 class="text-3xl font-bold text-primary mb-2">Nuestra Esencia</h3>
-                <div class="h-1 w-20 bg-secondary mx-auto rounded-full"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Mision -->
-                <div class="bg-green-50 p-6 rounded-xl border border-green-100 hover:shadow-lg transition-shadow">
-                    <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mb-4 text-secondary mx-auto md:mx-0">
-                        <i data-lucide="target" class="w-6 h-6"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-3 text-center md:text-left">Misión</h4>
-                    <p class="text-gray-600 leading-relaxed text-sm md:text-base text-center md:text-left">
-                        Ofrecer soluciones ambientales y sanitarias eficientes que respalden el cumplimiento normativo y promuevan la sostenibilidad, a través de consultoría técnica especializada y un compromiso constante con la calidad y los resultados.
-                    </p>
-                </div>
-                
-                <!-- Vision -->
-                <div class="bg-blue-50 p-6 rounded-xl border border-blue-100 hover:shadow-lg transition-shadow">
-                     <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mb-4 text-accent mx-auto md:mx-0">
-                        <i data-lucide="eye" class="w-6 h-6"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-3 text-center md:text-left">Visión</h4>
-                    <p class="text-gray-600 leading-relaxed text-sm md:text-base text-center md:text-left">
-                        MAMCA S.A Busca consolidarse como una empresa líder en consultoría ambiental a nivel nacional, reconocida por su excelencia técnica, compromiso con la sostenibilidad y capacidad para ofrecer soluciones efectivas, innovadoras y adaptadas a las necesidades de cada cliente.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
